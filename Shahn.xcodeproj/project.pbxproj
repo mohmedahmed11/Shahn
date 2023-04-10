@@ -35,6 +35,7 @@
 		CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE041B229E3C8D000239BF7 /* UserModel.swift */; };
 		CEE041B629E3C8D000239BF7 /* AboutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE041B329E3C8D000239BF7 /* AboutModels.swift */; };
 		CEE041B729E3C8D000239BF7 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE041B429E3C8D000239BF7 /* ErrorModel.swift */; };
+		CEE041BD29E3E07A00239BF7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE041BC29E3E07A00239BF7 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,9 @@
 		CEE041B229E3C8D000239BF7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CEE041B329E3C8D000239BF7 /* AboutModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutModels.swift; sourceTree = "<group>"; };
 		CEE041B429E3C8D000239BF7 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		CEE041BA29E3D11300239BF7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		CEE041BB29E3D11300239BF7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CEE041BC29E3E07A00239BF7 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FD083CFCBF54A5DCAF8FDBEC /* Pods-Shahn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shahn.debug.xcconfig"; path = "Target Support Files/Pods-Shahn/Pods-Shahn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,7 @@
 				CEE0417B29E3510B00239BF7 /* ViewController.swift */,
 				CEE0418B29E3C83C00239BF7 /* Helpers */,
 				CEE0417D29E3510B00239BF7 /* Main.storyboard */,
+				CEE041BC29E3E07A00239BF7 /* Home.storyboard */,
 				CEE0418029E3510C00239BF7 /* Assets.xcassets */,
 				CEE0418229E3510C00239BF7 /* LaunchScreen.storyboard */,
 				CEE0418529E3510C00239BF7 /* Info.plist */,
@@ -239,6 +244,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = CEE0416B29E3510B00239BF7;
 			productRefGroup = CEE0417529E3510B00239BF7 /* Products */;
@@ -256,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE0418F29E3C85300239BF7 /* Bahij Janna-Bold.ttf in Resources */,
+				CEE041BD29E3E07A00239BF7 /* Home.storyboard in Resources */,
 				CEE0418E29E3C85300239BF7 /* Bahij Janna-Regular.ttf in Resources */,
 				CEE0419A29E3C86C00239BF7 /* noUserDataNotLoadedNip.xib in Resources */,
 				CEE0418429E3510C00239BF7 /* LaunchScreen.storyboard in Resources */,
@@ -361,6 +368,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CEE0417E29E3510B00239BF7 /* Base */,
+				CEE041BA29E3D11300239BF7 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CEE0418329E3510C00239BF7 /* Base */,
+				CEE041BB29E3D11300239BF7 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -380,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -440,6 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

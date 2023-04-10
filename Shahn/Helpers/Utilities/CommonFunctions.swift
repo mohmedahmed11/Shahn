@@ -399,7 +399,6 @@ class func convertDateToString(PreviousDate:String) -> String
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let previousDate = dateFormatter.string(from:chatDate)
-        let currentDate = Date()
         let previousDateFormated : Date? = dateFormatter.date(from: previousDate)
         
         let currentCalendar = NSCalendar.current
