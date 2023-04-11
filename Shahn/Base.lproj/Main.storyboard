@@ -76,7 +76,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="22b-Om-41p">
-                                <rect key="frame" x="20" y="231" width="353" height="282"/>
+                                <rect key="frame" x="20" y="231" width="353" height="567"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ7-GE-dID">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="24"/>
@@ -158,8 +158,11 @@
                                             <constraint firstAttribute="trailing" secondItem="JOl-SW-cqN" secondAttribute="trailing" id="vEo-ua-HCn"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPc-cT-R4O">
+                                        <rect key="frame" x="0.0" y="154" width="353" height="233"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sa-Rc-dAH">
-                                        <rect key="frame" x="0.0" y="154" width="353" height="50"/>
+                                        <rect key="frame" x="0.0" y="427" width="353" height="50"/>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vZI-kt-qtZ"/>
@@ -174,7 +177,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-fq-km5">
-                                        <rect key="frame" x="0.0" y="244" width="353" height="38"/>
+                                        <rect key="frame" x="0.0" y="517" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WFZ-Tf-eli"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="إنشاء حساب">
@@ -191,6 +197,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gCy-cT-p6G" firstAttribute="trailing" secondItem="WSD-0U-S0s" secondAttribute="trailing" id="P79-rY-lTC"/>
+                            <constraint firstItem="WSD-0U-S0s" firstAttribute="bottom" secondItem="22b-Om-41p" secondAttribute="bottom" constant="20" id="bOl-WE-OEa"/>
                             <constraint firstItem="gCy-cT-p6G" firstAttribute="top" secondItem="WSD-0U-S0s" secondAttribute="top" id="k7S-8i-JHt"/>
                             <constraint firstItem="gCy-cT-p6G" firstAttribute="leading" secondItem="WSD-0U-S0s" secondAttribute="leading" id="kMJ-xy-lPx"/>
                             <constraint firstItem="22b-Om-41p" firstAttribute="top" secondItem="gCy-cT-p6G" secondAttribute="bottom" constant="8" id="oYh-g6-ICn"/>
@@ -222,7 +229,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="VkX-fN-Fji">
-                                <rect key="frame" x="20" y="231" width="353" height="334"/>
+                                <rect key="frame" x="20" y="231" width="353" height="567"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajO-K4-80a">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="24"/>
@@ -391,8 +398,11 @@
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSP-sJ-Gw3">
+                                        <rect key="frame" x="0.0" y="284" width="353" height="193"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN3-IV-WBR">
-                                        <rect key="frame" x="0.0" y="284" width="353" height="50"/>
+                                        <rect key="frame" x="0.0" y="517" width="353" height="50"/>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="68D-3h-oWR"/>
@@ -411,6 +421,7 @@
                         <constraints>
                             <constraint firstItem="VkX-fN-Fji" firstAttribute="top" secondItem="IG0-lc-cZb" secondAttribute="bottom" constant="8" id="FUv-mi-eIp"/>
                             <constraint firstItem="VkX-fN-Fji" firstAttribute="leading" secondItem="hoR-MD-zmt" secondAttribute="leading" constant="20" id="KWd-AN-nN5"/>
+                            <constraint firstItem="hoR-MD-zmt" firstAttribute="bottom" secondItem="VkX-fN-Fji" secondAttribute="bottom" constant="20" id="OPB-Gk-9UF"/>
                             <constraint firstItem="IG0-lc-cZb" firstAttribute="trailing" secondItem="hoR-MD-zmt" secondAttribute="trailing" id="Srw-Bp-Kle"/>
                             <constraint firstItem="IG0-lc-cZb" firstAttribute="top" secondItem="hoR-MD-zmt" secondAttribute="top" id="bTI-Gd-tEg"/>
                             <constraint firstItem="hoR-MD-zmt" firstAttribute="trailing" secondItem="VkX-fN-Fji" secondAttribute="trailing" constant="20" id="u0d-la-wFI"/>
@@ -438,7 +449,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="jau-cg-mmQ">
-                                <rect key="frame" x="20" y="231" width="353" height="268"/>
+                                <rect key="frame" x="20" y="231" width="353" height="567"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-jv-WAw">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="24"/>
@@ -478,6 +489,7 @@
                                             <constraint firstItem="HZP-8A-uaA" firstAttribute="leading" secondItem="Ke5-jv-WAw" secondAttribute="leading" id="CJI-2Q-SfT"/>
                                             <constraint firstItem="HZP-8A-uaA" firstAttribute="centerY" secondItem="Ke5-jv-WAw" secondAttribute="centerY" id="H1T-wx-O9q"/>
                                             <constraint firstAttribute="bottom" secondItem="axH-qy-TLS" secondAttribute="bottom" id="Urd-Kw-ROr"/>
+                                            <constraint firstAttribute="height" constant="24" id="ZuL-Ig-SFA"/>
                                             <constraint firstItem="axH-qy-TLS" firstAttribute="top" secondItem="Ke5-jv-WAw" secondAttribute="top" id="tWj-71-33c"/>
                                         </constraints>
                                     </view>
@@ -549,6 +561,9 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ZSU-kx-T8r"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
@@ -561,8 +576,11 @@
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TL2-0I-h3e">
+                                        <rect key="frame" x="0.0" y="218" width="353" height="259"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-Ir-4BY">
-                                        <rect key="frame" x="0.0" y="218" width="353" height="50"/>
+                                        <rect key="frame" x="0.0" y="517" width="353" height="50"/>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="38p-Cn-X59"/>
@@ -583,6 +601,7 @@
                             <constraint firstItem="jxl-CI-HPW" firstAttribute="trailing" secondItem="cFH-pb-g09" secondAttribute="trailing" id="Hmg-5d-jkA"/>
                             <constraint firstItem="jau-cg-mmQ" firstAttribute="top" secondItem="jxl-CI-HPW" secondAttribute="bottom" constant="8" id="Nl1-J0-mic"/>
                             <constraint firstItem="jxl-CI-HPW" firstAttribute="top" secondItem="cFH-pb-g09" secondAttribute="top" id="jF0-go-I6J"/>
+                            <constraint firstItem="cFH-pb-g09" firstAttribute="bottom" secondItem="jau-cg-mmQ" secondAttribute="bottom" constant="20" id="jIY-gM-Cb4"/>
                             <constraint firstItem="cFH-pb-g09" firstAttribute="trailing" secondItem="jau-cg-mmQ" secondAttribute="trailing" constant="20" id="oxy-Uf-vjR"/>
                             <constraint firstItem="jxl-CI-HPW" firstAttribute="leading" secondItem="cFH-pb-g09" secondAttribute="leading" id="tmT-ah-t6x"/>
                         </constraints>
@@ -612,14 +631,19 @@
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="geh-JM-jOb">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="logo" width="567" height="423"/>
         <image name="shahn-logo" width="380" height="200"/>
         <namedColor name="BGColor">
-            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.8666666666666667" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
