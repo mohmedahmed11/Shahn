@@ -13,6 +13,8 @@
 		CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AE29E5621D00644F0F /* Orders.storyboard */; };
 		CE9854B129E5625C00644F0F /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854B029E5625C00644F0F /* Account.storyboard */; };
 		CE9854B329E562BD00644F0F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854B229E562BD00644F0F /* Setting.storyboard */; };
+		CE9854B529E56C9100644F0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854B429E56C9100644F0F /* HomeViewController.swift */; };
+		CE9854B829E56F2A00644F0F /* PrividersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854B729E56F2A00644F0F /* PrividersViewController.swift */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 		CE9854AE29E5621D00644F0F /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		CE9854B029E5625C00644F0F /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		CE9854B229E562BD00644F0F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		CE9854B429E56C9100644F0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE9854B729E56F2A00644F0F /* PrividersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrividersViewController.swift; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9854A929E55CDB00644F0F /* TabBar */,
+				CE9854B629E56C9600644F0F /* Home */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -129,6 +134,15 @@
 				CE9854AA29E55CF600644F0F /* TabbarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CE9854B629E56C9600644F0F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854B429E56C9100644F0F /* HomeViewController.swift */,
+				CE9854B729E56F2A00644F0F /* PrividersViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		CEE0416B29E3510B00239BF7 = {
@@ -380,6 +394,7 @@
 				CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */,
 				CEE041AD29E3C89500239BF7 /* Utilities.swift in Sources */,
 				CEE041AA29E3C89500239BF7 /* CommonFunctions.swift in Sources */,
+				CE9854B829E56F2A00644F0F /* PrividersViewController.swift in Sources */,
 				CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */,
 				CEE041B729E3C8D000239BF7 /* ErrorModel.swift in Sources */,
 				CEE0419D29E3C86C00239BF7 /* CustomMarker.swift in Sources */,
@@ -390,6 +405,7 @@
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,
 				CEE0419E29E3C86C00239BF7 /* noDataFoundNip.swift in Sources */,
 				CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */,
+				CE9854B529E56C9100644F0F /* HomeViewController.swift in Sources */,
 				CEE0419929E3C86C00239BF7 /* noUserDataNotLoadedNip.swift in Sources */,
 				CEE041AB29E3C89500239BF7 /* API.swift in Sources */,
 				CEE041B029E3C89500239BF7 /* Extestension.swift in Sources */,
