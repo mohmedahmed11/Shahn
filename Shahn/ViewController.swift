@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.performSegue(withIdentifier: "doSign", sender: nil)
+        sleep(2)
+        self.performSegue(withIdentifier: "toHome", sender: nil)
     }
 
 

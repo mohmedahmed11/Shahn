@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
-        <!--Home-->
+        <!--Tabbar-->
         <scene sceneID="vO9-pF-7nq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="jv6-v7-UNB" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Tabbar" id="jv6-v7-UNB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="agc-77-azE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faM-7S-g1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

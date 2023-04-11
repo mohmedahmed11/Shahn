@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		944F80C8061D703B50A6DB0A /* Pods_Shahn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244B180228A4E83B109F3D73 /* Pods_Shahn.framework */; };
+		CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854AA29E55CF600644F0F /* TabbarController.swift */; };
+		CE9854AD29E5619300644F0F /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AC29E5619300644F0F /* Tabbar.storyboard */; };
+		CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AE29E5621D00644F0F /* Orders.storyboard */; };
+		CE9854B129E5625C00644F0F /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854B029E5625C00644F0F /* Account.storyboard */; };
+		CE9854B329E562BD00644F0F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854B229E562BD00644F0F /* Setting.storyboard */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -41,6 +46,11 @@
 /* Begin PBXFileReference section */
 		19992C77E07D9609007130D6 /* Pods-Shahn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shahn.release.xcconfig"; path = "Target Support Files/Pods-Shahn/Pods-Shahn.release.xcconfig"; sourceTree = "<group>"; };
 		244B180228A4E83B109F3D73 /* Pods_Shahn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shahn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9854AA29E55CF600644F0F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		CE9854AC29E5619300644F0F /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		CE9854AE29E5621D00644F0F /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
+		CE9854B029E5625C00644F0F /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		CE9854B229E562BD00644F0F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +115,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE9854A829E55CB700644F0F /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854A929E55CDB00644F0F /* TabBar */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		CE9854A929E55CDB00644F0F /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854AA29E55CF600644F0F /* TabbarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		CEE0416B29E3510B00239BF7 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +156,13 @@
 				CEE0417929E3510B00239BF7 /* SceneDelegate.swift */,
 				CEE0417B29E3510B00239BF7 /* ViewController.swift */,
 				CEE0418B29E3C83C00239BF7 /* Helpers */,
+				CE9854A829E55CB700644F0F /* Scene */,
 				CEE0417D29E3510B00239BF7 /* Main.storyboard */,
+				CE9854AC29E5619300644F0F /* Tabbar.storyboard */,
 				CEE041BC29E3E07A00239BF7 /* Home.storyboard */,
+				CE9854AE29E5621D00644F0F /* Orders.storyboard */,
+				CE9854B029E5625C00644F0F /* Account.storyboard */,
+				CE9854B229E562BD00644F0F /* Setting.storyboard */,
 				CEE0418029E3510C00239BF7 /* Assets.xcassets */,
 				CEE0418229E3510C00239BF7 /* LaunchScreen.storyboard */,
 				CEE0418529E3510C00239BF7 /* Info.plist */,
@@ -268,7 +299,11 @@
 				CEE0418429E3510C00239BF7 /* LaunchScreen.storyboard in Resources */,
 				CEE0418129E3510C00239BF7 /* Assets.xcassets in Resources */,
 				CEE0419829E3C86C00239BF7 /* customViewsMedia.xcassets in Resources */,
+				CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */,
+				CE9854AD29E5619300644F0F /* Tabbar.storyboard in Resources */,
+				CE9854B329E562BD00644F0F /* Setting.storyboard in Resources */,
 				CEE0419C29E3C86C00239BF7 /* noDataFoundNip.xib in Resources */,
+				CE9854B129E5625C00644F0F /* Account.storyboard in Resources */,
 				CEE0419B29E3C86C00239BF7 /* CustomMarker.xib in Resources */,
 				CEE0417F29E3510B00239BF7 /* Main.storyboard in Resources */,
 			);
@@ -354,6 +389,7 @@
 				CEE041B629E3C8D000239BF7 /* AboutModels.swift in Sources */,
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,
 				CEE0419E29E3C86C00239BF7 /* noDataFoundNip.swift in Sources */,
+				CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */,
 				CEE0419929E3C86C00239BF7 /* noUserDataNotLoadedNip.swift in Sources */,
 				CEE041AB29E3C89500239BF7 /* API.swift in Sources */,
 				CEE041B029E3C89500239BF7 /* Extestension.swift in Sources */,

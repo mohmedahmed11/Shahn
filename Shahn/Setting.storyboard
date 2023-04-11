@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BPU-rI-B95">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yaK-34-47x">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,36 +19,35 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IPJ-ME-sIH"/>
+                    <navigationItem key="navigationItem" id="ks0-A4-VFa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860.3053435114502" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="866.41221374045801" y="-28.169014084507044"/>
         </scene>
-        <!--الرئيسية-->
-        <scene sceneID="m4Z-gD-ZEY">
+        <!--المزيد-->
+        <scene sceneID="eXQ-N4-Erq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BPU-rI-B95" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="الرئيسية" image="house" catalog="system" selectedImage="house.fill" id="L9L-a5-JCX"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yaK-34-47x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="المزيد" image="icon-extra" id="IhU-7Z-X4U"/>
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xeh-Oq-UmJ">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QsY-m0-zad">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="ayq-pJ-jBx"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="PSt-15-4ny"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fUB-qs-EYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MbK-hc-YKy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.58778625954199" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="-60.305343511450381" y="-28.169014084507044"/>
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="104"/>
-        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="icon-extra" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
