@@ -15,6 +15,11 @@
 		CE9854B329E562BD00644F0F /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854B229E562BD00644F0F /* Setting.storyboard */; };
 		CE9854B529E56C9100644F0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854B429E56C9100644F0F /* HomeViewController.swift */; };
 		CE9854B829E56F2A00644F0F /* PrividersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854B729E56F2A00644F0F /* PrividersViewController.swift */; };
+		CE9854BB29E5E0F100644F0F /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9854B929E5E0F100644F0F /* ReviewView.xib */; };
+		CE9854BC29E5E0F100644F0F /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854BA29E5E0F100644F0F /* ReviewView.swift */; };
+		CE9854BF29E5E1DA00644F0F /* ProviderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854BE29E5E1DA00644F0F /* ProviderDetailsViewController.swift */; };
+		CE9854D529E68A9C00644F0F /* NewOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854D429E68A9C00644F0F /* NewOrder.storyboard */; };
+		CE9854D829E69C3400644F0F /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -55,6 +60,11 @@
 		CE9854B229E562BD00644F0F /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CE9854B429E56C9100644F0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE9854B729E56F2A00644F0F /* PrividersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrividersViewController.swift; sourceTree = "<group>"; };
+		CE9854B929E5E0F100644F0F /* ReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewView.xib; sourceTree = "<group>"; };
+		CE9854BA29E5E0F100644F0F /* ReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		CE9854BE29E5E1DA00644F0F /* ProviderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailsViewController.swift; sourceTree = "<group>"; };
+		CE9854D429E68A9C00644F0F /* NewOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewOrder.storyboard; sourceTree = "<group>"; };
+		CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,10 +149,30 @@
 		CE9854B629E56C9600644F0F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE9854D629E69C1500644F0F /* Order */,
+				CE9854BD29E5E0F900644F0F /* ReviewView */,
 				CE9854B429E56C9100644F0F /* HomeViewController.swift */,
 				CE9854B729E56F2A00644F0F /* PrividersViewController.swift */,
+				CE9854BE29E5E1DA00644F0F /* ProviderDetailsViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CE9854BD29E5E0F900644F0F /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854BA29E5E0F100644F0F /* ReviewView.swift */,
+				CE9854B929E5E0F100644F0F /* ReviewView.xib */,
+			);
+			path = ReviewView;
+			sourceTree = "<group>";
+		};
+		CE9854D629E69C1500644F0F /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		CEE0416B29E3510B00239BF7 = {
@@ -174,6 +204,7 @@
 				CEE0417D29E3510B00239BF7 /* Main.storyboard */,
 				CE9854AC29E5619300644F0F /* Tabbar.storyboard */,
 				CEE041BC29E3E07A00239BF7 /* Home.storyboard */,
+				CE9854D429E68A9C00644F0F /* NewOrder.storyboard */,
 				CE9854AE29E5621D00644F0F /* Orders.storyboard */,
 				CE9854B029E5625C00644F0F /* Account.storyboard */,
 				CE9854B229E562BD00644F0F /* Setting.storyboard */,
@@ -306,11 +337,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9854D529E68A9C00644F0F /* NewOrder.storyboard in Resources */,
 				CEE0418F29E3C85300239BF7 /* Bahij Janna-Bold.ttf in Resources */,
 				CEE041BD29E3E07A00239BF7 /* Home.storyboard in Resources */,
 				CEE0418E29E3C85300239BF7 /* Bahij Janna-Regular.ttf in Resources */,
 				CEE0419A29E3C86C00239BF7 /* noUserDataNotLoadedNip.xib in Resources */,
 				CEE0418429E3510C00239BF7 /* LaunchScreen.storyboard in Resources */,
+				CE9854BB29E5E0F100644F0F /* ReviewView.xib in Resources */,
 				CEE0418129E3510C00239BF7 /* Assets.xcassets in Resources */,
 				CEE0419829E3C86C00239BF7 /* customViewsMedia.xcassets in Resources */,
 				CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */,
@@ -390,6 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE041AF29E3C89500239BF7 /* AlertHelper.swift in Sources */,
+				CE9854D829E69C3400644F0F /* CreateOrderViewController.swift in Sources */,
+				CE9854BC29E5E0F100644F0F /* ReviewView.swift in Sources */,
 				CEE041A929E3C89500239BF7 /* Extensions+UIView.swift in Sources */,
 				CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */,
 				CEE041AD29E3C89500239BF7 /* Utilities.swift in Sources */,
@@ -400,6 +435,7 @@
 				CEE0419D29E3C86C00239BF7 /* CustomMarker.swift in Sources */,
 				CEE041B129E3C89500239BF7 /* AttachmentHandler.swift in Sources */,
 				CEE041AE29E3C89500239BF7 /* StretchyHeaderLayout.swift in Sources */,
+				CE9854BF29E5E1DA00644F0F /* ProviderDetailsViewController.swift in Sources */,
 				CEE041AC29E3C89500239BF7 /* HeaderView.swift in Sources */,
 				CEE041B629E3C8D000239BF7 /* AboutModels.swift in Sources */,
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,
