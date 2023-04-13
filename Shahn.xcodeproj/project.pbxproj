@@ -20,6 +20,7 @@
 		CE9854BF29E5E1DA00644F0F /* ProviderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854BE29E5E1DA00644F0F /* ProviderDetailsViewController.swift */; };
 		CE9854D529E68A9C00644F0F /* NewOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854D429E68A9C00644F0F /* NewOrder.storyboard */; };
 		CE9854D829E69C3400644F0F /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */; };
+		CE9854DB29E823D000644F0F /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854DA29E823D000644F0F /* OrdersViewController.swift */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -65,6 +66,7 @@
 		CE9854BE29E5E1DA00644F0F /* ProviderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailsViewController.swift; sourceTree = "<group>"; };
 		CE9854D429E68A9C00644F0F /* NewOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewOrder.storyboard; sourceTree = "<group>"; };
 		CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
+		CE9854DA29E823D000644F0F /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				CE9854A929E55CDB00644F0F /* TabBar */,
 				CE9854B629E56C9600644F0F /* Home */,
+				CE9854D929E823AA00644F0F /* Orders */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -173,6 +176,14 @@
 				CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		CE9854D929E823AA00644F0F /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854DA29E823D000644F0F /* OrdersViewController.swift */,
+			);
+			path = Orders;
 			sourceTree = "<group>";
 		};
 		CEE0416B29E3510B00239BF7 = {
@@ -422,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9854DB29E823D000644F0F /* OrdersViewController.swift in Sources */,
 				CEE041AF29E3C89500239BF7 /* AlertHelper.swift in Sources */,
 				CE9854D829E69C3400644F0F /* CreateOrderViewController.swift in Sources */,
 				CE9854BC29E5E0F100644F0F /* ReviewView.swift in Sources */,
