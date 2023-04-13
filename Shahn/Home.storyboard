@@ -436,7 +436,7 @@
         <!--Provider Details View Controller-->
         <scene sceneID="Dme-CS-cwD">
             <objects>
-                <viewController id="Eab-hg-jVo" customClass="ProviderDetailsViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProviderDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eab-hg-jVo" customClass="ProviderDetailsViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S6q-Yk-MWW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
