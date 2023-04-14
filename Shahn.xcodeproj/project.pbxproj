@@ -27,6 +27,8 @@
 		CE9854E829E932BF00644F0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E429E932BE00644F0F /* LoginViewController.swift */; };
 		CE9854E929E932BF00644F0F /* ValidationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E529E932BE00644F0F /* ValidationCodeViewController.swift */; };
 		CE9854EA29E932BF00644F0F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E629E932BE00644F0F /* RegistrationViewController.swift */; };
+		CE9854ED29E94CB200644F0F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854EC29E94CB200644F0F /* HomePresenter.swift */; };
+		CE9854F029E9535C00644F0F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854EF29E9535C00644F0F /* CategoryCollectionViewCell.swift */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -79,6 +81,8 @@
 		CE9854E429E932BE00644F0F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE9854E529E932BE00644F0F /* ValidationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCodeViewController.swift; sourceTree = "<group>"; };
 		CE9854E629E932BE00644F0F /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CE9854EC29E94CB200644F0F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CE9854EF29E9535C00644F0F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,9 +169,11 @@
 		CE9854B629E56C9600644F0F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE9854EE29E9533F00644F0F /* Cells */,
 				CE9854D629E69C1500644F0F /* Order */,
 				CE9854BD29E5E0F900644F0F /* ReviewView */,
 				CE9854B429E56C9100644F0F /* HomeViewController.swift */,
+				CE9854EC29E94CB200644F0F /* HomePresenter.swift */,
 				CE9854B729E56F2A00644F0F /* PrividersViewController.swift */,
 				CE9854BE29E5E1DA00644F0F /* ProviderDetailsViewController.swift */,
 			);
@@ -210,6 +216,14 @@
 				CE9854E529E932BE00644F0F /* ValidationCodeViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		CE9854EE29E9533F00644F0F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854EF29E9535C00644F0F /* CategoryCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CEE0416B29E3510B00239BF7 = {
@@ -474,9 +488,11 @@
 				CE9854DF29E92DC200644F0F /* OrderDetailsViewController.swift in Sources */,
 				CEE0419D29E3C86C00239BF7 /* CustomMarker.swift in Sources */,
 				CEE041B129E3C89500239BF7 /* AttachmentHandler.swift in Sources */,
+				CE9854ED29E94CB200644F0F /* HomePresenter.swift in Sources */,
 				CEE041AE29E3C89500239BF7 /* StretchyHeaderLayout.swift in Sources */,
 				CE9854BF29E5E1DA00644F0F /* ProviderDetailsViewController.swift in Sources */,
 				CEE041AC29E3C89500239BF7 /* HeaderView.swift in Sources */,
+				CE9854F029E9535C00644F0F /* CategoryCollectionViewCell.swift in Sources */,
 				CEE041B629E3C8D000239BF7 /* AboutModels.swift in Sources */,
 				CE9854E829E932BF00644F0F /* LoginViewController.swift in Sources */,
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,

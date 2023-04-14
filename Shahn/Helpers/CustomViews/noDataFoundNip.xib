@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bahij Janna-Regular.ttf">
+            <string>BahijJanna</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="noDataFoundNip" customModule="Kaar" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="noDataFoundNip" customModule="Shahn" customModuleProvider="target">
             <connections>
                 <outlet property="content" destination="8AB-Ru-8Gr" id="iBI-0W-ne7"/>
                 <outlet property="icon" destination="BNm-7X-QLZ" id="gfK-AE-6o6"/>
@@ -19,31 +24,32 @@
             <rect key="frame" x="0.0" y="0.0" width="431" height="303"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا توجد بيانات " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AB-Ru-8Gr">
-                    <rect key="frame" x="0.0" y="229" width="431" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="y5u-w2-vjw"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_search" translatesAutoresizingMaskIntoConstraints="NO" id="BNm-7X-QLZ">
-                    <rect key="frame" x="-5.6666666666666572" y="0.0" width="442.33333333333326" height="221"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="BNm-7X-QLZ" secondAttribute="height" multiplier="2:1" id="03V-wm-wbY"/>
-                    </constraints>
-                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tjk-Ab-EQs">
+                    <rect key="frame" x="155.66666666666666" y="74" width="119.99999999999997" height="168"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_search" translatesAutoresizingMaskIntoConstraints="NO" id="BNm-7X-QLZ">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="8GW-js-vdz"/>
+                                <constraint firstAttribute="height" constant="120" id="UVO-Xw-Zno"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا توجد بيانات " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AB-Ru-8Gr">
+                            <rect key="frame" x="15.666666666666686" y="128" width="88.333333333333329" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="y5u-w2-vjw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8AB-Ru-8Gr" secondAttribute="trailing" id="2GD-P4-PT4"/>
-                <constraint firstItem="BNm-7X-QLZ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="efv-L8-AXW"/>
-                <constraint firstItem="8AB-Ru-8Gr" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="hpj-xE-L7D"/>
-                <constraint firstItem="8AB-Ru-8Gr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="maT-Wf-EB2"/>
-                <constraint firstItem="8AB-Ru-8Gr" firstAttribute="top" secondItem="BNm-7X-QLZ" secondAttribute="bottom" constant="8" id="s7U-ni-2vY"/>
-                <constraint firstItem="BNm-7X-QLZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="y2D-Ue-2O0"/>
+                <constraint firstItem="Tjk-Ab-EQs" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="S3k-1X-6fx"/>
+                <constraint firstItem="Tjk-Ab-EQs" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="VSI-gq-H9C"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-180.76923076923077" y="-379.26540284360186"/>
@@ -51,8 +57,5 @@
     </objects>
     <resources>
         <image name="no_search" width="300" height="200"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

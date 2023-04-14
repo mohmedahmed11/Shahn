@@ -43,7 +43,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="SV5-0S-YAr">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="SV5-0S-YAr" customClass="CategoryCollectionViewCell" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="3" y="0.0" width="387" height="532"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jda-SQ-hdC">
@@ -73,6 +73,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="387" height="532"/>
+                                        <connections>
+                                            <outlet property="image" destination="2ou-eC-VyK" id="BzE-dd-vUT"/>
+                                            <outlet property="name" destination="PbU-hP-ZHl" id="g1o-4p-Yp4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -80,7 +84,7 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="j75-mU-NMk"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-bo-bTk">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-bo-bTk">
                                 <rect key="frame" x="20" y="760" width="50" height="50"/>
                                 <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
@@ -114,6 +118,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="AgV-06-8qx" id="7HS-1q-NON"/>
+                        <outlet property="nextBtn" destination="c0o-bo-bTk" id="G3N-Xu-mFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
