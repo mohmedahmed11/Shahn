@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		944F80C8061D703B50A6DB0A /* Pods_Shahn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244B180228A4E83B109F3D73 /* Pods_Shahn.framework */; };
+		CE81C0AF29E982BB0018CDCB /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */; };
 		CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854AA29E55CF600644F0F /* TabbarController.swift */; };
 		CE9854AD29E5619300644F0F /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AC29E5619300644F0F /* Tabbar.storyboard */; };
 		CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AE29E5621D00644F0F /* Orders.storyboard */; };
@@ -63,6 +64,7 @@
 /* Begin PBXFileReference section */
 		19992C77E07D9609007130D6 /* Pods-Shahn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shahn.release.xcconfig"; path = "Target Support Files/Pods-Shahn/Pods-Shahn.release.xcconfig"; sourceTree = "<group>"; };
 		244B180228A4E83B109F3D73 /* Pods_Shahn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shahn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 		CE9854AA29E55CF600644F0F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		CE9854AC29E5619300644F0F /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		CE9854AE29E5621D00644F0F /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				CE9854EF29E9535C00644F0F /* CategoryCollectionViewCell.swift */,
 				CE9854F129E95B3200644F0F /* CityCollectionViewCell.swift */,
+				CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				CE9854E829E932BF00644F0F /* LoginViewController.swift in Sources */,
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,
 				CE9854E129E92E5400644F0F /* OrderLoadsViewController.swift in Sources */,
+				CE81C0AF29E982BB0018CDCB /* ProviderTableViewCell.swift in Sources */,
 				CEE0419E29E3C86C00239BF7 /* noDataFoundNip.swift in Sources */,
 				CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */,
 				CE9854E929E932BF00644F0F /* ValidationCodeViewController.swift in Sources */,

@@ -15,6 +15,7 @@ protocol HomeViewDelegate {
 
 protocol ProvidersViewDelegate {
     func didReciveCities(with result: Result<JSON, Error>)
+    func didReciveProviders(with result: Result<JSON, Error>)
 }
 
 
@@ -58,6 +59,21 @@ class HomePesenter {
                 self.homeController?.didReciveCategories(with: .success(data))
             case .failure(let error):
                 self.homeController?.didReciveCategories(with: .failure(error))
+            }
+        }
+    }
+    
+    func loadProviders(categoryId: Int) {
+        guard let request = Glubal.providers.getRequest(parameters: ["category_id": "\(categoryId)"]) else {return}
+        startProgress()
+        NetworkManager.instance.request(with: request, decodingType: JSON.self, errorModel: ErrorModel.self) { [weak self] result in
+            guard let self = self else { return }
+            self.stopProgress()
+            switch result {
+            case .success(let data):
+                self.providerController?.didReciveProviders(with: .success(data))
+            case .failure(let error):
+                self.providerController?.didReciveProviders(with: .failure(error))
             }
         }
     }

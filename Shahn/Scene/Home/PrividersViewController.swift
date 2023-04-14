@@ -15,15 +15,41 @@ class ProvidersViewController: UIViewController {
     @IBOutlet weak var providersSegment: UISegmentedControl!
     @IBOutlet weak var citiesCollectionView: UICollectionView!
     
+    @IBOutlet weak var resultCountLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var requestBTN: UIButton!
     
     var presenter: HomePesenter?
     
     var cities = [JSON]()
-    var providers = [JSON]()
+    var providers = [JSON]() {
+        didSet {
+            if !providers.isEmpty {
+                self.resultCountLbl.text = "عدد النتائج = \(providers.count)"
+                self.resultCountLbl.isHidden = false
+            }else {
+                self.resultCountLbl.isHidden = true
+            }
+        }
+        
+    }
     var selectedCategory: JSON!
     
     var selectedCityIndex = 0
+    
+    var selectedProviders = [JSON]() {
+        didSet {
+            if !selectedProviders.isEmpty {
+                self.requestBTN.isEnabled = true
+                self.requestBTN.backgroundColor = UIColor(named: "PrimaryColor")
+            }else {
+                self.requestBTN.isEnabled = false
+                self.requestBTN.backgroundColor = .systemGray3
+            }
+        }
+        
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -35,12 +61,14 @@ class ProvidersViewController: UIViewController {
         citiesCollectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
         self.setupSearchView()
         self.setupSegments()
+        self.resultCountLbl.isHidden = true
         self.loadAll()
         // Do any additional setup after loading the view.
     }
     
     func loadAll() {
         self.presenter?.loadCities()
+        self.presenter?.loadProviders(categoryId: self.selectedCategory["id"].intValue)
     }
     
     func setupSearchView() {
@@ -96,6 +124,26 @@ extension ProvidersViewController: ProvidersViewDelegate {
         }
     }
     
+    func didReciveProviders(with result: Result<JSON, Error>) {
+        switch result {
+        case .success(let data):
+            if data["operation"].boolValue == true {
+                self.providers = data["data"].arrayValue
+                if !self.providers.isEmpty {
+                    self.tableView.backgroundView = nil
+                    self.tableView.reloadData()
+                }else {
+                    self.addNoData()
+                }
+            }else {
+                self.addNoData()
+            }
+        case .failure(let error):
+            self.faildLoading(icon: UIImage(named: "reload"), content: "حدث خطأ اعد المحاولة")
+            print(error)
+        }
+    }
+    
     func addNoData() {
         let error = noDataFoundNip()
         error.frame.size.height = 200
@@ -104,8 +152,8 @@ extension ProvidersViewController: ProvidersViewDelegate {
     }
     
     func faildLoading(icon: UIImage?, content: String) {
-        let error = noUserDataNotLoadedNip(icon, content)
-        error.frame = self.tabBarController!.tabBar.frame
+        let error = noUserDataNotLoadedNip(nil, content)
+        error.frame = self.tabBarController?.tabBar.frame ?? .zero
         error.reloadData = {
             self.loadAll()
             error.removeFromSuperview()
@@ -185,15 +233,24 @@ extension ProvidersViewController: UICollectionViewDelegate, UICollectionViewDat
 
 extension ProvidersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.providers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProviderTableViewCell
+        let provider = self.providers[indexPath.row]
+        cell.setUI(with: provider)
+        cell.checkedCallback = {
+            if self.selectedProviders.first(where: {$0["id"].intValue == provider["id"].intValue}) != nil {
+                self.selectedProviders.removeAll(where: {$0["id"].intValue == provider["id"].intValue})
+            }else {
+                self.selectedProviders.append(provider)
+            }
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "providerDetails", sender: nil)
+        self.performSegue(withIdentifier: "providerDetails", sender: self.providers[indexPath.row])
     }
 }
