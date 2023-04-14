@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -32,17 +33,47 @@
                                     <constraint firstAttribute="height" constant="200" id="sBG-JM-fOe"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جار التحميل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpF-zZ-YeL">
+                                <rect key="frame" x="165.33333333333334" y="776" width="62.333333333333343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="qNk-eF-8V0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyD-HF-b8o">
+                                <rect key="frame" x="123.33333333333331" y="776" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="EXD-Sr-UZp"/>
+                                    <constraint firstAttribute="width" constant="34" id="fFG-za-Lrf"/>
+                                </constraints>
+                                <color key="tintColor" name="PrimaryColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="reload" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="reload" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Od-0N-vLq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BGColor"/>
                         <constraints>
+                            <constraint firstItem="EpF-zZ-YeL" firstAttribute="leading" secondItem="XyD-HF-b8o" secondAttribute="trailing" constant="8" symbolic="YES" id="0vo-g4-R5W"/>
+                            <constraint firstItem="XyD-HF-b8o" firstAttribute="centerY" secondItem="EpF-zZ-YeL" secondAttribute="centerY" id="Fbl-sn-oXM"/>
                             <constraint firstItem="mKO-Tj-1Ij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dtD-aA-kqT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mKO-Tj-1Ij" secondAttribute="trailing" id="eRk-Vj-Q08"/>
                             <constraint firstItem="mKO-Tj-1Ij" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="fyA-Xg-dBx"/>
+                            <constraint firstItem="EpF-zZ-YeL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nmP-0r-WJt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EpF-zZ-YeL" secondAttribute="bottom" constant="8" id="x2s-J9-N0n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gln-3H-eh4"/>
                     <connections>
+                        <outlet property="loadingLabel" destination="EpF-zZ-YeL" id="UJK-oT-EEg"/>
+                        <outlet property="reloadBtn" destination="XyD-HF-b8o" id="BYy-8u-xpC"/>
                         <segue destination="rDJ-kc-4m6" kind="show" identifier="doSign" id="dPT-bI-vch"/>
                         <segue destination="jv6-v7-UNB" kind="show" identifier="toHome" id="lEu-o0-GAN"/>
                     </connections>
@@ -638,6 +669,7 @@
     </designables>
     <resources>
         <image name="logo" width="567" height="423"/>
+        <image name="reload" width="33.333332061767578" height="33.333332061767578"/>
         <image name="shahn-logo" width="380" height="200"/>
         <namedColor name="BGColor">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -677,11 +677,11 @@ enum Glubal {
 
 extension Glubal: Endpoint {
     var base: String {
-        return "https://carrentksa.com/carr_app/"
+        return "https://shahen1.com/shahen_app/"
     }
     
     var baseImages: String {
-        return "https://carrentksa.com/carr_app/images/"
+        return "https://shahen1.com/shahen_app/images/"
     }
     
     var path: String {

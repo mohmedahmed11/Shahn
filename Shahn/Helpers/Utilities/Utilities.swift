@@ -8,3 +8,4 @@
 import Foundation
 
 let APP_NAME = "شحن"
+var accessToken = ""
