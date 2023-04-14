@@ -13,18 +13,14 @@ struct User: Codable {
     var phone: String?
     var contact: String?
     var image: String?
-    var identity: String?
-    var userIdentity: UserFiles?
     
-    init(id: String, name: String, phone: String, contact: String? = nil, image: String? = nil, identity: String? = nil, action: String = "login", userIdentity: UserFiles? = nil) {
+    init(id: String, name: String, phone: String, contact: String? = nil, image: String? = nil, action: String = "login") {
         self.id = id
         self.name = name
         self.phone = phone
         self.contact = contact
         self.action = action
         self.image = image
-        self.userIdentity = userIdentity
-        self.identity = identity
     }
     
     var userCode = 0000

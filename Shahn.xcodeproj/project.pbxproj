@@ -24,6 +24,9 @@
 		CE9854DD29E8AEB900644F0F /* OrderPricingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854DC29E8AEB900644F0F /* OrderPricingViewController.swift */; };
 		CE9854DF29E92DC200644F0F /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854DE29E92DC200644F0F /* OrderDetailsViewController.swift */; };
 		CE9854E129E92E5400644F0F /* OrderLoadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E029E92E5400644F0F /* OrderLoadsViewController.swift */; };
+		CE9854E829E932BF00644F0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E429E932BE00644F0F /* LoginViewController.swift */; };
+		CE9854E929E932BF00644F0F /* ValidationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E529E932BE00644F0F /* ValidationCodeViewController.swift */; };
+		CE9854EA29E932BF00644F0F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854E629E932BE00644F0F /* RegistrationViewController.swift */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -73,6 +76,9 @@
 		CE9854DC29E8AEB900644F0F /* OrderPricingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPricingViewController.swift; sourceTree = "<group>"; };
 		CE9854DE29E92DC200644F0F /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		CE9854E029E92E5400644F0F /* OrderLoadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderLoadsViewController.swift; sourceTree = "<group>"; };
+		CE9854E429E932BE00644F0F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE9854E529E932BE00644F0F /* ValidationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationCodeViewController.swift; sourceTree = "<group>"; };
+		CE9854E629E932BE00644F0F /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		CE9854A829E55CB700644F0F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				CE9854E229E9329900644F0F /* Auth */,
 				CE9854A929E55CDB00644F0F /* TabBar */,
 				CE9854B629E56C9600644F0F /* Home */,
 				CE9854D929E823AA00644F0F /* Orders */,
@@ -193,6 +200,16 @@
 				CE9854E029E92E5400644F0F /* OrderLoadsViewController.swift */,
 			);
 			path = Orders;
+			sourceTree = "<group>";
+		};
+		CE9854E229E9329900644F0F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CE9854E429E932BE00644F0F /* LoginViewController.swift */,
+				CE9854E629E932BE00644F0F /* RegistrationViewController.swift */,
+				CE9854E529E932BE00644F0F /* ValidationCodeViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		CEE0416B29E3510B00239BF7 = {
@@ -452,6 +469,7 @@
 				CEE041AA29E3C89500239BF7 /* CommonFunctions.swift in Sources */,
 				CE9854B829E56F2A00644F0F /* PrividersViewController.swift in Sources */,
 				CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */,
+				CE9854EA29E932BF00644F0F /* RegistrationViewController.swift in Sources */,
 				CEE041B729E3C8D000239BF7 /* ErrorModel.swift in Sources */,
 				CE9854DF29E92DC200644F0F /* OrderDetailsViewController.swift in Sources */,
 				CEE0419D29E3C86C00239BF7 /* CustomMarker.swift in Sources */,
@@ -460,10 +478,12 @@
 				CE9854BF29E5E1DA00644F0F /* ProviderDetailsViewController.swift in Sources */,
 				CEE041AC29E3C89500239BF7 /* HeaderView.swift in Sources */,
 				CEE041B629E3C8D000239BF7 /* AboutModels.swift in Sources */,
+				CE9854E829E932BF00644F0F /* LoginViewController.swift in Sources */,
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,
 				CE9854E129E92E5400644F0F /* OrderLoadsViewController.swift in Sources */,
 				CEE0419E29E3C86C00239BF7 /* noDataFoundNip.swift in Sources */,
 				CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */,
+				CE9854E929E932BF00644F0F /* ValidationCodeViewController.swift in Sources */,
 				CE9854DD29E8AEB900644F0F /* OrderPricingViewController.swift in Sources */,
 				CE9854B529E56C9100644F0F /* HomeViewController.swift in Sources */,
 				CEE0419929E3C86C00239BF7 /* noUserDataNotLoadedNip.swift in Sources */,

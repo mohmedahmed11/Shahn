@@ -28,6 +28,6 @@ struct SMS: Codable {
 
 struct AboutResponse:Codable {
     let operation: Bool
-//    let sms: SMS
+    let sms: SMS
     let about: About
 }

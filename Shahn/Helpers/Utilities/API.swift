@@ -673,6 +673,7 @@ enum Glubal {
     case getUser
     case cities
     case categories
+    case sms
 }
 
 extension Glubal: Endpoint {
@@ -700,6 +701,8 @@ extension Glubal: Endpoint {
             return "show/cities.php"
         case .categories:
             return "show/categories.php"
+        case .sms:
+            return "sms_api.php"
         }
     }
     

@@ -90,6 +90,7 @@ class ViewController: UIViewController {
             switch result {
             case .success(let data):
                 AppManager.shared.about = data.about
+                AppManager.shared.sms = data.sms
                 self.segue()
                 print(data.about.about)
             case .failure(let error):

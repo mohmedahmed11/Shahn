@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="2200" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="TdR-cp-Ho6">
             <objects>
-                <viewController id="rDJ-kc-4m6" sceneMemberID="viewController">
+                <viewController id="rDJ-kc-4m6" customClass="LoginViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zmI-cE-bdO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,7 +166,10 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DeO-BS-2Jt">
                                                         <rect key="frame" x="14" y="0.0" width="279" height="50"/>
                                                         <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        <connections>
+                                                            <action selector="valueChanged:" destination="rDJ-kc-4m6" eventType="editingChanged" id="6Qv-10-zAQ"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4h-Zj-dv5">
                                                         <rect key="frame" x="303" y="0.0" width="50" height="50"/>
@@ -204,7 +207,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ubJ-Y3-wNx" kind="show" id="hez-RR-OTR"/>
+                                            <action selector="submitAction" destination="rDJ-kc-4m6" eventType="touchUpInside" id="ygH-qh-bNf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-fq-km5">
@@ -237,18 +240,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8ds-YJ-dUQ">
-                        <barButtonItem key="backBarButtonItem" title=" " id="6Lm-Fj-LLe"/>
+                        <barButtonItem key="backBarButtonItem" title="  " id="6Lm-Fj-LLe"/>
                         <barButtonItem key="leftBarButtonItem" id="nMb-rn-gM0"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="phone" destination="DeO-BS-2Jt" id="zMQ-Tn-qq9"/>
+                        <segue destination="ubJ-Y3-wNx" kind="show" identifier="validationCode" id="w9g-ep-WEG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd3-3k-VHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2200.7633587786258" y="-677.46478873239437"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="bNa-U0-HKj">
             <objects>
-                <viewController id="SbB-Mh-D6Z" sceneMemberID="viewController">
+                <viewController id="SbB-Mh-D6Z" customClass="RegistrationViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="62i-Xd-A70">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +311,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XSB-Ig-pNp">
-                                        <rect key="frame" x="0.0" y="64" width="353" height="116"/>
+                                        <rect key="frame" x="0.0" y="64" width="353" height="182"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uW-DT-2lA">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
@@ -322,7 +329,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الإسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYh-bY-FrJ">
                                                                 <rect key="frame" x="14" y="0.0" width="339" height="50"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -352,7 +359,10 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Br-yU-tGH">
                                                                 <rect key="frame" x="14" y="0.0" width="279" height="50"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <action selector="valueChanged:" destination="SbB-Mh-D6Z" eventType="editingChanged" id="By9-d5-TaC"/>
+                                                                </connections>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p33-5w-TQ4">
                                                                 <rect key="frame" x="303" y="0.0" width="50" height="50"/>
@@ -375,10 +385,52 @@
                                                     <constraint firstAttribute="trailing" secondItem="50e-ac-ddw" secondAttribute="trailing" id="uSh-es-AsZ"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmC-W6-lnL">
+                                                <rect key="frame" x="0.0" y="132" width="353" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-Uh-omt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emk-IA-D0W">
+                                                                <rect key="frame" x="0.0" y="0.0" width="4" height="50"/>
+                                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="4" id="33e-KV-wlj"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="رقم التواصل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BzP-bf-3MN">
+                                                                <rect key="frame" x="14" y="0.0" width="279" height="50"/>
+                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <action selector="valueChanged:" destination="SbB-Mh-D6Z" eventType="editingChanged" id="hRA-W0-AUk"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLA-QD-75p">
+                                                                <rect key="frame" x="303" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="Jkv-Ka-nYY"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="BGColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CaC-7C-w3s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gDc-Uh-omt" secondAttribute="trailing" id="Icu-5A-Xm5"/>
+                                                    <constraint firstItem="gDc-Uh-omt" firstAttribute="leading" secondItem="fmC-W6-lnL" secondAttribute="leading" id="OGR-O9-wIe"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gDc-Uh-omt" secondAttribute="bottom" id="iI0-iD-2qn"/>
+                                                    <constraint firstItem="gDc-Uh-omt" firstAttribute="top" secondItem="fmC-W6-lnL" secondAttribute="top" id="xe3-Ts-iLp"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QfE-WK-n31">
-                                        <rect key="frame" x="0.0" y="220" width="353" height="24"/>
+                                        <rect key="frame" x="0.0" y="286" width="353" height="24"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geh-JM-jOb" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -398,6 +450,9 @@
                                                         <color key="value" name="PrimaryColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="agreement:" destination="SbB-Mh-D6Z" eventType="touchUpInside" id="wKS-FJ-TIi"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwH-4l-jOY">
                                                 <rect key="frame" x="34" y="0.0" width="319" height="24"/>
@@ -415,6 +470,9 @@
                                                         <state key="normal" title=" الشروط والأحكام">
                                                             <color key="titleColor" name="PrimaryColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="opentAgreement" destination="SbB-Mh-D6Z" eventType="touchUpInside" id="eOJ-8K-utd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -430,7 +488,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSP-sJ-Gw3">
-                                        <rect key="frame" x="0.0" y="284" width="353" height="193"/>
+                                        <rect key="frame" x="0.0" y="350" width="353" height="127"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN3-IV-WBR">
                                         <rect key="frame" x="0.0" y="517" width="353" height="50"/>
@@ -443,6 +501,9 @@
                                         <state key="normal" title="تحقق">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitAction" destination="SbB-Mh-D6Z" eventType="touchUpInside" id="LaQ-tO-ITV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -459,16 +520,24 @@
                             <constraint firstItem="IG0-lc-cZb" firstAttribute="leading" secondItem="hoR-MD-zmt" secondAttribute="leading" id="vHh-zd-5Dl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ngr-S5-UaF"/>
+                    <navigationItem key="navigationItem" id="ngr-S5-UaF">
+                        <barButtonItem key="backBarButtonItem" title=" " id="rK1-WH-bSA"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contact" destination="BzP-bf-3MN" id="fvc-Bm-llP"/>
+                        <outlet property="name" destination="FYh-bY-FrJ" id="NUN-Iq-Rxa"/>
+                        <outlet property="phone" destination="4Br-yU-tGH" id="4vV-Ko-UrD"/>
+                        <segue destination="ubJ-Y3-wNx" kind="show" identifier="validationCode" id="cGj-xl-fPr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lc-6x-7M8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3197.709923664122" y="-677.46478873239437"/>
         </scene>
-        <!--View Controller-->
+        <!--Validation Code View Controller-->
         <scene sceneID="j6r-xx-b19">
             <objects>
-                <viewController id="ubJ-Y3-wNx" sceneMemberID="viewController">
+                <viewController id="ubJ-Y3-wNx" customClass="ValidationCodeViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZMx-57-qau">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -531,29 +600,27 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="24"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ادخل رمز الذي أرسلناه إلى رقم الهاتف" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ow4-4q-Sp0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="24"/>
-                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="24"/>
+                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZz-cL-Lsk">
-                                                        <rect key="frame" x="193" y="0.0" width="36" height="24"/>
-                                                        <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="16"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="+966">
-                                                            <color key="titleColor" name="PrimaryColor"/>
-                                                        </state>
-                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="966" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5v-cI-7CL">
+                                                        <rect key="frame" x="166.66666666666666" y="0.0" width="19.666666666666657" height="24"/>
+                                                        <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="12"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="zZz-cL-Lsk" firstAttribute="leading" secondItem="ow4-4q-Sp0" secondAttribute="trailing" constant="8" symbolic="YES" id="4Wx-A5-szd"/>
-                                                    <constraint firstItem="zZz-cL-Lsk" firstAttribute="top" secondItem="0Vz-7y-c6v" secondAttribute="top" id="BAs-Up-8gS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="C5v-cI-7CL" secondAttribute="bottom" id="3yx-rH-Kcw"/>
                                                     <constraint firstAttribute="height" constant="24" id="BuG-wn-mg6"/>
                                                     <constraint firstAttribute="bottom" secondItem="ow4-4q-Sp0" secondAttribute="bottom" id="GPB-Ix-cIX"/>
                                                     <constraint firstItem="ow4-4q-Sp0" firstAttribute="leading" secondItem="0Vz-7y-c6v" secondAttribute="leading" id="Ihn-Fs-Lzp"/>
                                                     <constraint firstItem="ow4-4q-Sp0" firstAttribute="top" secondItem="0Vz-7y-c6v" secondAttribute="top" id="ZIW-5S-hsI"/>
-                                                    <constraint firstAttribute="bottom" secondItem="zZz-cL-Lsk" secondAttribute="bottom" id="odO-T6-BHR"/>
+                                                    <constraint firstItem="C5v-cI-7CL" firstAttribute="leading" secondItem="ow4-4q-Sp0" secondAttribute="trailing" constant="8" symbolic="YES" id="gej-b6-wdy"/>
+                                                    <constraint firstItem="C5v-cI-7CL" firstAttribute="top" secondItem="0Vz-7y-c6v" secondAttribute="top" id="k01-mc-cPc"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -564,32 +631,48 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nps-Il-OvO">
                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q8G-GL-ynq">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q8G-GL-ynq">
                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s73-22-Lf7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80.666666666666671" height="50"/>
                                                                 <color key="backgroundColor" name="BGColor"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <action selector="valueChange:" destination="ubJ-Y3-wNx" eventType="editingChanged" id="W2l-oW-cGc"/>
+                                                                    <outlet property="delegate" destination="ubJ-Y3-wNx" id="sdZ-Oa-xKq"/>
+                                                                </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nos-Xc-AXh">
+                                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nos-Xc-AXh">
                                                                 <rect key="frame" x="90.666666666666686" y="0.0" width="81" height="50"/>
                                                                 <color key="backgroundColor" name="BGColor"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <action selector="valueChange:" destination="ubJ-Y3-wNx" eventType="editingChanged" id="Ncu-B2-RGs"/>
+                                                                    <outlet property="delegate" destination="ubJ-Y3-wNx" id="m2T-wJ-ix3"/>
+                                                                </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xld-Gu-CVF">
+                                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xld-Gu-CVF">
                                                                 <rect key="frame" x="181.66666666666666" y="0.0" width="80.666666666666657" height="50"/>
                                                                 <color key="backgroundColor" name="BGColor"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <action selector="valueChange:" destination="ubJ-Y3-wNx" eventType="editingChanged" id="B54-t6-opJ"/>
+                                                                    <outlet property="delegate" destination="ubJ-Y3-wNx" id="XoV-uN-lCr"/>
+                                                                </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lW-LM-UuR">
+                                                            <textField opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ـ" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3lW-LM-UuR">
                                                                 <rect key="frame" x="272.33333333333331" y="0.0" width="80.666666666666686" height="50"/>
                                                                 <color key="backgroundColor" name="BGColor"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                <connections>
+                                                                    <action selector="valueChange:" destination="ubJ-Y3-wNx" eventType="editingChanged" id="fBl-6t-Z6z"/>
+                                                                    <outlet property="delegate" destination="ubJ-Y3-wNx" id="r7T-jy-6Uf"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
@@ -607,8 +690,35 @@
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-12-DQZ">
+                                        <rect key="frame" x="0.0" y="218" width="353" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="E4u-Rs-CKf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-hk-TVU">
+                                        <rect key="frame" x="0.0" y="262" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vpj-xg-sIU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="16"/>
+                                        <state key="normal" title="إعادة إرسال الرمز">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reSendCode" destination="ubJ-Y3-wNx" eventType="touchUpInside" id="v7i-PA-mSH"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TL2-0I-h3e">
-                                        <rect key="frame" x="0.0" y="218" width="353" height="259"/>
+                                        <rect key="frame" x="0.0" y="282" width="353" height="195"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-Ir-4BY">
                                         <rect key="frame" x="0.0" y="517" width="353" height="50"/>
@@ -621,6 +731,9 @@
                                         <state key="normal" title="تأكيد">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitData" destination="ubJ-Y3-wNx" eventType="touchUpInside" id="ASp-rb-ldK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -638,10 +751,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tDD-r8-HUi"/>
+                    <connections>
+                        <outlet property="phone" destination="C5v-cI-7CL" id="Yxx-Vu-CDA"/>
+                        <outlet property="resendBtn" destination="y7i-hk-TVU" id="aZ2-rR-CfC"/>
+                        <outlet property="skipValidationNumberLabel" destination="mnp-12-DQZ" id="HJB-Q0-HCQ"/>
+                        <outletCollection property="Code" destination="s73-22-Lf7" collectionClass="NSMutableArray" id="9gG-kr-So0"/>
+                        <outletCollection property="Code" destination="nos-Xc-AXh" collectionClass="NSMutableArray" id="HY1-AO-iah"/>
+                        <outletCollection property="Code" destination="xld-Gu-CVF" collectionClass="NSMutableArray" id="oxi-Rd-Ksv"/>
+                        <outletCollection property="Code" destination="3lW-LM-UuR" collectionClass="NSMutableArray" id="nbS-V6-lDS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWq-EI-ggt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4334" y="-677"/>
+            <point key="canvasLocation" x="4333.5877862595416" y="-677.46478873239437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eIH-mM-RSQ">
@@ -667,6 +789,9 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="w9g-ep-WEG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="567" height="423"/>
         <image name="reload" width="33.333332061767578" height="33.333332061767578"/>
