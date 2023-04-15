@@ -609,8 +609,8 @@
                         <outlet property="dropOff" destination="XwY-HT-wUl" id="hTi-ie-Lyc"/>
                         <outlet property="imagesCollectionView" destination="7v9-9U-Aot" id="qfM-GV-Leu"/>
                         <outlet property="phone" destination="2Rp-iA-EPR" id="lc3-eL-6pr"/>
-                        <outlet property="picUp" destination="6Na-Hb-Plw" id="6sv-Ap-H6G"/>
-                        <outlet property="reciverName" destination="Ndy-bv-zlt" id="iF3-r0-bvn"/>
+                        <outlet property="pickUp" destination="4i3-rM-LGe" id="MNC-XR-2oD"/>
+                        <outlet property="receiverName" destination="Ndy-bv-zlt" id="8kB-LE-vb9"/>
                         <outlet property="type" destination="dxo-s6-WF4" id="6EV-EZ-SCa"/>
                         <outlet property="wight" destination="mvw-bM-n4p" id="MTo-aa-ZJp"/>
                         <outlet property="wightBtn" destination="eQ2-xM-HPm" id="nFt-GD-4No"/>

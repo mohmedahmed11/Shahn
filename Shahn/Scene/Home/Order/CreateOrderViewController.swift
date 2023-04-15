@@ -23,10 +23,10 @@ class CreateOrderViewController: UIViewController {
     @IBOutlet weak var circles: UITextField!
     @IBOutlet weak var details: UITextView!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
-    @IBOutlet weak var picUp: UILabel!
+    @IBOutlet weak var pickUp: UILabel!
     @IBOutlet weak var dropOff: UILabel!
     @IBOutlet weak var chargeDate: UITextField!
-    @IBOutlet weak var reciverName: UITextField!
+    @IBOutlet weak var receiverName: UITextField!
     @IBOutlet weak var phone: UITextField!
     
     @IBOutlet weak var wightBtn: UIButton!
@@ -46,11 +46,11 @@ class CreateOrderViewController: UIViewController {
     var contentType: ContentType = .wight
     
     enum PicLocationFor {
-        case picUp
+        case pickUp
         case dropOff
     }
     
-    var picLocationFor: PicLocationFor = .picUp
+    var picLocationFor: PicLocationFor = .pickUp
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,7 +179,7 @@ class CreateOrderViewController: UIViewController {
     }
 
     @IBAction func picLocationForPickUp() {
-        picLocationFor = .picUp
+        picLocationFor = .pickUp
         self.performSegue(withIdentifier: "picLocation", sender: nil)
     }
     
@@ -205,9 +205,9 @@ class CreateOrderViewController: UIViewController {
 
 extension CreateOrderViewController: PicLocation {
     func picAdd(location: CLLocationCoordinate2D) {
-        if picLocationFor == .picUp {
+        if picLocationFor == .pickUp {
             self.picUpLacation = location
-            self.picUp.text = "\(location.latitude) - \(location.longitude)"
+            self.pickUp.text = "\(location.latitude) - \(location.longitude)"
         }else {
             self.dropOffLacation = location
             self.dropOff.text = "\(location.latitude) - \(location.longitude)"
