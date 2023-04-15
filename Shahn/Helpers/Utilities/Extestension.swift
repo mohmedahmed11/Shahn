@@ -453,7 +453,7 @@ extension UITextView :UITextViewDelegate
         if let placeholderLabel = self.viewWithTag(100) as! UILabel? {
             let labelX = self.textContainer.lineFragmentPadding
             let labelY = self.textContainerInset.top
-            let labelWidth = self.frame.width - 20
+            let labelWidth = self.frame.width + 15
             let labelHeight = placeholderLabel.frame.height
             placeholderLabel.frame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
             placeholderLabel.textAlignment = .right

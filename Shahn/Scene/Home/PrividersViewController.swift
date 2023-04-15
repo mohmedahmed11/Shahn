@@ -100,6 +100,9 @@ class ProvidersViewController: UIViewController {
         if segue.identifier == "providerDetails" {
             let vc = segue.destination as! ProviderDetailsViewController
             vc.provider = sender as? JSON
+        }else if segue.identifier == "createOrder" {
+            let vc = segue.destination as! CreateOrderViewController
+            vc.providers = self.selectedProviders
         }
         // Pass the selected object to the new view controller.
     }

@@ -11,6 +11,7 @@
 		CE81C0AF29E982BB0018CDCB /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */; };
 		CE81C0B129EA52800018CDCB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */; };
 		CE81C0B329EA5AC50018CDCB /* PicAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */; };
+		CE81C0B529EA5E880018CDCB /* CreateOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B429EA5E880018CDCB /* CreateOrderPresenter.swift */; };
 		CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854AA29E55CF600644F0F /* TabbarController.swift */; };
 		CE9854AD29E5619300644F0F /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AC29E5619300644F0F /* Tabbar.storyboard */; };
 		CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AE29E5621D00644F0F /* Orders.storyboard */; };
@@ -69,6 +70,7 @@
 		CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
 		CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicAddressViewController.swift; sourceTree = "<group>"; };
+		CE81C0B429EA5E880018CDCB /* CreateOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderPresenter.swift; sourceTree = "<group>"; };
 		CE9854AA29E55CF600644F0F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		CE9854AC29E5619300644F0F /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		CE9854AE29E5621D00644F0F /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */,
 				CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */,
+				CE81C0B429EA5E880018CDCB /* CreateOrderPresenter.swift */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				CE9854E929E932BF00644F0F /* ValidationCodeViewController.swift in Sources */,
 				CE9854DD29E8AEB900644F0F /* OrderPricingViewController.swift in Sources */,
 				CE9854B529E56C9100644F0F /* HomeViewController.swift in Sources */,
+				CE81C0B529EA5E880018CDCB /* CreateOrderPresenter.swift in Sources */,
 				CEE0419929E3C86C00239BF7 /* noUserDataNotLoadedNip.swift in Sources */,
 				CEE041AB29E3C89500239BF7 /* API.swift in Sources */,
 				CEE041B029E3C89500239BF7 /* Extestension.swift in Sources */,

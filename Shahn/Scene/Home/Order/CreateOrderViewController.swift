@@ -51,6 +51,14 @@ class CreateOrderViewController: UIViewController {
     }
     
     var picLocationFor: PicLocationFor = .pickUp
+    
+    var presenter: CreateOrderPresenter?
+    var providers: [JSON]!
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        presenter = CreateOrderPresenter(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +75,8 @@ class CreateOrderViewController: UIViewController {
         datePicker.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
 
         // Set some of UIDatePicker properties
-        datePicker.timeZone = NSTimeZone.local
+        datePicker.timeZone = TimeZone(identifier: "UTC")
+        datePicker.locale = Locale(identifier: "en_US")
         datePicker.datePickerMode = .date
         datePicker.backgroundColor = UIColor.white
         datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
@@ -98,7 +107,7 @@ class CreateOrderViewController: UIViewController {
        let dateFormatter: DateFormatter = DateFormatter()
 
        // Set date format
-       dateFormatter.dateFormat = "yyyy/MM/dd"
+       dateFormatter.dateFormat = "yyyy-MM-dd"
 
        // Apply date format
        let selectedDate: String = dateFormatter.string(from: sender.date)
@@ -136,12 +145,12 @@ class CreateOrderViewController: UIViewController {
     
     func setupContentType() {
         if contentType == .wight {
-            wight.isEnabled = true
-            circles.isEnabled = false
+            wight.isHidden = false
+            circles.isHidden = true
             circles.text = nil
         }else {
-            circles.isEnabled = true
-            wight.isEnabled = false
+            circles.isHidden = false
+            wight.isHidden = true
             wight.text = nil
         }
     }
@@ -189,6 +198,94 @@ class CreateOrderViewController: UIViewController {
         self.performSegue(withIdentifier: "picLocation", sender: nil)
     }
     
+    @IBAction func submit() {
+        
+        if type.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if contentType == .wight && wight.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if contentType == .circles && circles.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if details.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if images.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if picUpLacation == nil {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if dropOffLacation == nil {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if chargeDate.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if receiverName.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if phone.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        sendData()
+    }
+    
+    func sendData() {
+        let data = MultipartFormData()
+        data.append((UserDefaults.standard.string(forKey: "userIsIn") ?? "-1").data(using: .utf8)!, withName: "user_id")
+        data.append(type.text!.data(using: .utf8)!, withName: "type")
+        data.append(wight.text!.data(using: .utf8)!, withName: "wight")
+        data.append(circles.text!.data(using: .utf8)!, withName: "circles")
+        data.append(details.text!.data(using: .utf8)!, withName: "details")
+        data.append("\(picUpLacation.latitude)".data(using: .utf8)!, withName: "pickup_lat")
+        data.append("\(picUpLacation.longitude)".data(using: .utf8)!, withName: "pickup_lon")
+        data.append("\(dropOffLacation.latitude)".data(using: .utf8)!, withName: "dropoff_lat")
+        data.append("\(dropOffLacation.longitude)".data(using: .utf8)!, withName: "dropoff_lon")
+        
+        data.append(chargeDate.text!.data(using: .utf8)!, withName: "charge_date")
+        data.append(receiverName.text!.data(using: .utf8)!, withName: "receiver_name")
+        data.append(phone.text!.data(using: .utf8)!, withName: "receiver_phone")
+        data.append("create".data(using: .utf8)!, withName: "action")
+        
+        do {
+            let terms = try JSONEncoder().encode(providers)
+            data.append(terms, withName: "providers")
+        }catch {
+            AlertHelper.showAlert(message: "الرجاء مراجعة شاشة مزودي الخدمات")
+            return
+        }
+        
+        for index in 0..<images.count {
+            if let imageData = images[index].jpegData(compressionQuality: 0.5) {
+                data.append(imageData, withName: "images[\(index)]", fileName: "IMG.jpg", mimeType: "image/jpg")
+            }
+        }
+        presenter?.createOrder(with: data)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -201,6 +298,24 @@ class CreateOrderViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
 
+}
+
+extension CreateOrderViewController: CreateOrderViewDelegate {
+    func didCreateOrder(with result: Result<JSON, Error>) {
+        switch result {
+        case .success(let data):
+            if data["operation"].boolValue == true {
+                AlertHelper.showOk(message: "تم إنشاء طلبك بنجاح") {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }else {
+                AlertHelper.showAlert(message: "عفوا لم يتم إنشاء الطلب يوجد خطأ")
+            }
+        case .failure(let error):
+            AlertHelper.showAlert(message: "عفوا لم يتم إنشاء الطلب حدث خطأ")
+            print(error)
+        }
+    }
 }
 
 extension CreateOrderViewController: PicLocation {
@@ -223,7 +338,7 @@ extension CreateOrderViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
         if indexPath.item != images.count {
-            cell.imageView.image = self.images[indexPath.row - 1]
+            cell.imageView.image = self.images[indexPath.row]
             cell.trushBtn.isHidden = false
             cell.remove = {
                 self.images.remove(at: indexPath.row)
@@ -245,5 +360,22 @@ extension CreateOrderViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.frame.height
         return .init(width: size, height: size)
+    }
+}
+
+extension CreateOrderViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == chargeDate {
+            textField.inputView = datePicker
+        }
+    }
+    
+    @IBAction func valueChanged(_ textField: UITextField) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale(identifier: "EN")
+        if let finalText = numberFormatter.number(from: "\(textField.text!)")
+        {
+            textField.text = finalText.stringValue
+        }
     }
 }

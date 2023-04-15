@@ -675,6 +675,7 @@ enum Glubal {
     case categories
     case sms
     case providers
+    case createOrder
 }
 
 extension Glubal: Endpoint {
@@ -706,6 +707,8 @@ extension Glubal: Endpoint {
             return "sms_api.php"
         case .providers:
             return "show/providers.php"
+        case .createOrder:
+            return "write/orders.php"
         }
     }
     
