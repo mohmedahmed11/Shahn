@@ -31,7 +31,7 @@
                                 <rect key="frame" x="8" y="103" width="377" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="144" id="p57-N5-EL3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="144" id="p57-N5-EL3" customClass="OrderTableViewCell" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="377" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p57-N5-EL3" id="0Nq-6L-npG">
@@ -108,6 +108,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="nve-67-p7Y" secondAttribute="trailing" constant="8" id="vHM-YR-2cn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="date" destination="MWv-UL-RyS" id="xuF-jU-ciz"/>
+                                            <outlet property="orderId" destination="hLa-0S-uek" id="3ST-Vk-IG8"/>
+                                            <outlet property="status" destination="nHi-do-FNm" id="vVn-gW-1Zp"/>
+                                            <outlet property="type" destination="bVr-VR-4Vp" id="u7E-dn-51Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1254,10 +1260,10 @@
         <image name="orders" width="25" height="25"/>
         <image name="orders-fill" width="25" height="25"/>
         <namedColor name="BGColor">
-            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.8666666666666667" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

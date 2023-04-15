@@ -12,6 +12,8 @@
 		CE81C0B129EA52800018CDCB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */; };
 		CE81C0B329EA5AC50018CDCB /* PicAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */; };
 		CE81C0B529EA5E880018CDCB /* CreateOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B429EA5E880018CDCB /* CreateOrderPresenter.swift */; };
+		CE81C0B729EA76070018CDCB /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B629EA76070018CDCB /* OrdersPresenter.swift */; };
+		CE81C0BA29EA77CC0018CDCB /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B929EA77CC0018CDCB /* OrderTableViewCell.swift */; };
 		CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854AA29E55CF600644F0F /* TabbarController.swift */; };
 		CE9854AD29E5619300644F0F /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AC29E5619300644F0F /* Tabbar.storyboard */; };
 		CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AE29E5621D00644F0F /* Orders.storyboard */; };
@@ -71,6 +73,8 @@
 		CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicAddressViewController.swift; sourceTree = "<group>"; };
 		CE81C0B429EA5E880018CDCB /* CreateOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderPresenter.swift; sourceTree = "<group>"; };
+		CE81C0B629EA76070018CDCB /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
+		CE81C0B929EA77CC0018CDCB /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		CE9854AA29E55CF600644F0F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		CE9854AC29E5619300644F0F /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		CE9854AE29E5621D00644F0F /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
@@ -157,6 +161,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE81C0B829EA77B80018CDCB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE81C0B929EA77CC0018CDCB /* OrderTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CE9854A829E55CB700644F0F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +224,9 @@
 		CE9854D929E823AA00644F0F /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				CE81C0B829EA77B80018CDCB /* Cells */,
 				CE9854DA29E823D000644F0F /* OrdersViewController.swift */,
+				CE81C0B629EA76070018CDCB /* OrdersPresenter.swift */,
 				CE9854DC29E8AEB900644F0F /* OrderPricingViewController.swift */,
 				CE9854DE29E92DC200644F0F /* OrderDetailsViewController.swift */,
 				CE9854E029E92E5400644F0F /* OrderLoadsViewController.swift */,
@@ -499,6 +513,7 @@
 				CEE041AD29E3C89500239BF7 /* Utilities.swift in Sources */,
 				CEE041AA29E3C89500239BF7 /* CommonFunctions.swift in Sources */,
 				CE81C0B329EA5AC50018CDCB /* PicAddressViewController.swift in Sources */,
+				CE81C0B729EA76070018CDCB /* OrdersPresenter.swift in Sources */,
 				CE9854B829E56F2A00644F0F /* PrividersViewController.swift in Sources */,
 				CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */,
 				CE9854EA29E932BF00644F0F /* RegistrationViewController.swift in Sources */,
@@ -513,6 +528,7 @@
 				CE9854F029E9535C00644F0F /* CategoryCollectionViewCell.swift in Sources */,
 				CEE041B629E3C8D000239BF7 /* AboutModels.swift in Sources */,
 				CE9854E829E932BF00644F0F /* LoginViewController.swift in Sources */,
+				CE81C0BA29EA77CC0018CDCB /* OrderTableViewCell.swift in Sources */,
 				CEE041B529E3C8D000239BF7 /* UserModel.swift in Sources */,
 				CE9854E129E92E5400644F0F /* OrderLoadsViewController.swift in Sources */,
 				CE81C0AF29E982BB0018CDCB /* ProviderTableViewCell.swift in Sources */,
