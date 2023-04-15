@@ -28,7 +28,7 @@ class ReviewView: UIView {
         userName.text = review["name"].string
         reviewLbl.text = review["review"].string
         if let url = URL(string: Glubal.imageBaseurl.path+review["image"].stringValue) {
-            userImage.kf.setImage(with: url, placeholder: UIImage(named: "ownerProfile"))
+            userImage.kf.setImage(with: url, placeholder: UIImage(systemName: "person"))
         }
         
         for star in rateStars {

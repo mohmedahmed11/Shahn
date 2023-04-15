@@ -503,23 +503,23 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="T4W-oL-b2G">
                                                                 <rect key="frame" x="0.0" y="246.66666666666663" width="106" height="18"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-Pt-xsC">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-Pt-xsC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="18" id="ZCp-2t-Gkr"/>
                                                                             <constraint firstAttribute="height" constant="18" id="fc9-Tb-gVb"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="3tn-9P-qYj">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="3tn-9P-qYj">
                                                                         <rect key="frame" x="22" y="0.0" width="18" height="18"/>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="LKG-7S-94n">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="LKG-7S-94n">
                                                                         <rect key="frame" x="44" y="0.0" width="18" height="18"/>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="7wf-GE-EyF">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="7wf-GE-EyF">
                                                                         <rect key="frame" x="66" y="0.0" width="18" height="18"/>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Ee5-Kc-pSt">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Ee5-Kc-pSt">
                                                                         <rect key="frame" x="88" y="0.0" width="18" height="18"/>
                                                                     </imageView>
                                                                 </subviews>
@@ -593,8 +593,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="hW8-mE-U9J"/>
                     <connections>
+                        <outlet property="city" destination="k8b-10-fKy" id="lXB-PK-cKD"/>
+                        <outlet property="details" destination="lBw-0T-b7h" id="tFR-nV-y73"/>
                         <outlet property="imageSlideShow" destination="fQV-Yh-2Cz" id="FyK-gB-EbT"/>
+                        <outlet property="name" destination="ek6-br-zY8" id="02E-x9-oKX"/>
                         <outlet property="reveiwsStack" destination="2aM-Hc-Ue9" id="ems-DW-Hxf"/>
+                        <outlet property="type" destination="3uX-tT-HuO" id="2HP-hf-iFp"/>
+                        <outletCollection property="rateStars" destination="9Hl-Pt-xsC" collectionClass="NSMutableArray" id="0zN-yH-idu"/>
+                        <outletCollection property="rateStars" destination="3tn-9P-qYj" collectionClass="NSMutableArray" id="cuH-RR-MRH"/>
+                        <outletCollection property="rateStars" destination="LKG-7S-94n" collectionClass="NSMutableArray" id="kAM-wE-22b"/>
+                        <outletCollection property="rateStars" destination="7wf-GE-EyF" collectionClass="NSMutableArray" id="jMq-3n-Whh"/>
+                        <outletCollection property="rateStars" destination="Ee5-Kc-pSt" collectionClass="NSMutableArray" id="mNu-zI-z1y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeP-65-0g3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
