@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        GMSServices.provideAPIKey("AIzaSyCi5SN6rLLtNvRj9gaHGhsSZh5pIqNi48s")
         return true
     }
 

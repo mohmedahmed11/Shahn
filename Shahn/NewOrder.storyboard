@@ -108,6 +108,9 @@
                                                                                         <color key="value" name="PrimaryColor"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="contentTypeWight" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0Wr-yP-Tk7"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الوزن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-41-Tq5">
                                                                                 <rect key="frame" x="32" y="8" width="29" height="34"/>
@@ -160,6 +163,9 @@
                                                                                         <color key="value" name="PrimaryColor"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="contentTypeCircles" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EFM-iv-RhX"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عدد الردود" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfq-Cy-Wnr">
                                                                                 <rect key="frame" x="31.999999999999996" y="8" width="57.666666666666657" height="34"/>
@@ -237,14 +243,14 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="2Qn-dX-jaD"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qsv-ZG-atH">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qsv-ZG-atH">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Sar-Dr-f4V">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Sar-Dr-f4V" customClass="ImageCollectionViewCell" customModule="Shahn" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3zH-iW-kIl">
@@ -254,17 +260,42 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="wpf-37-Wpe">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                                 </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctH-Op-5VX">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                    <color key="backgroundColor" name="PrimaryColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="fz3-Eo-lW2"/>
+                                                                        <constraint firstAttribute="width" constant="20" id="vhE-Xh-GgV"/>
+                                                                    </constraints>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="X">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="removeAction" destination="Sar-Dr-f4V" eventType="touchUpInside" id="nsL-xy-79X"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="wpf-37-Wpe" firstAttribute="leading" secondItem="3zH-iW-kIl" secondAttribute="leading" id="4YH-ZA-mtT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="wpf-37-Wpe" secondAttribute="trailing" id="88G-KW-OXi"/>
                                                                 <constraint firstItem="wpf-37-Wpe" firstAttribute="top" secondItem="3zH-iW-kIl" secondAttribute="top" id="CKK-B5-Bl3"/>
                                                                 <constraint firstAttribute="bottom" secondItem="wpf-37-Wpe" secondAttribute="bottom" id="IHK-TC-Hmo"/>
+                                                                <constraint firstItem="ctH-Op-5VX" firstAttribute="top" secondItem="3zH-iW-kIl" secondAttribute="top" id="Rei-n3-hei"/>
+                                                                <constraint firstItem="ctH-Op-5VX" firstAttribute="left" secondItem="3zH-iW-kIl" secondAttribute="left" id="o5I-9d-7dI"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="128" height="128"/>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="wpf-37-Wpe" id="QaT-jb-t7w"/>
+                                                            <outlet property="trushBtn" destination="ctH-Op-5VX" id="eLI-Ea-Nq2"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="739-w7-oNZ"/>
+                                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Cec-DJ-gWs"/>
+                                                </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معلومات الشحن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1n-F3-Eq7">
                                                 <rect key="frame" x="0.0" y="524" width="377" height="34"/>
@@ -291,12 +322,23 @@
                                                                             <constraint firstAttribute="width" constant="3" id="tA2-pd-Sd7"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان الشحن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-Hb-Plw">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="3UZ-A9-1xq">
                                                                         <rect key="frame" x="11" y="0.0" width="308" height="50"/>
-                                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4i3-rM-LGe">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="70.333333333333329" height="50"/>
+                                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان الشحن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-Hb-Plw">
+                                                                                <rect key="frame" x="237.66666666666671" y="0.0" width="70.333333333333343" height="50"/>
+                                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROa-mB-Gce">
                                                                         <rect key="frame" x="327" y="0.0" width="50" height="50"/>
                                                                         <subviews>
@@ -306,6 +348,9 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5e-zY-nPQ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <connections>
+                                                                                    <action selector="picLocationForPickUp" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QoR-kr-AJi"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="PrimaryColor"/>
@@ -346,12 +391,23 @@
                                                                             <constraint firstAttribute="width" constant="3" id="6fI-MD-JYA"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان التفريغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-HT-wUl">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="98V-Em-Tyw">
                                                                         <rect key="frame" x="11" y="0.0" width="308" height="50"/>
-                                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R3-z6-8Qo">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مكان التفريغ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-HT-wUl">
+                                                                                <rect key="frame" x="238" y="0.0" width="70" height="50"/>
+                                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuc-of-1Yx">
                                                                         <rect key="frame" x="327" y="0.0" width="50" height="50"/>
                                                                         <subviews>
@@ -361,6 +417,9 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9L-47-hfU">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <connections>
+                                                                                    <action selector="picLocationForDropOff" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vX9-d2-Qzn"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="PrimaryColor"/>
@@ -542,28 +601,107 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="تفاصيل الطلب" id="OlL-0i-nfe"/>
+                    <connections>
+                        <outlet property="chargeDate" destination="qEt-hi-LKV" id="NCU-Bj-Pk9"/>
+                        <outlet property="circles" destination="k27-re-wz0" id="JAj-2c-hrC"/>
+                        <outlet property="circlesBtn" destination="BDt-uT-MFL" id="fiy-0i-zE0"/>
+                        <outlet property="details" destination="Tfn-4d-FLO" id="N7a-OH-Yff"/>
+                        <outlet property="dropOff" destination="XwY-HT-wUl" id="hTi-ie-Lyc"/>
+                        <outlet property="imagesCollectionView" destination="7v9-9U-Aot" id="qfM-GV-Leu"/>
+                        <outlet property="phone" destination="2Rp-iA-EPR" id="lc3-eL-6pr"/>
+                        <outlet property="picUp" destination="6Na-Hb-Plw" id="6sv-Ap-H6G"/>
+                        <outlet property="reciverName" destination="Ndy-bv-zlt" id="iF3-r0-bvn"/>
+                        <outlet property="type" destination="dxo-s6-WF4" id="6EV-EZ-SCa"/>
+                        <outlet property="wight" destination="mvw-bM-n4p" id="MTo-aa-ZJp"/>
+                        <outlet property="wightBtn" destination="eQ2-xM-HPm" id="nFt-GD-4No"/>
+                        <segue destination="2Lr-hV-BEl" kind="show" identifier="picLocation" id="dxn-8I-EeP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2" y="4"/>
         </scene>
+        <!--إختر العنوان-->
+        <scene sceneID="vGw-DM-fov">
+            <objects>
+                <viewController id="2Lr-hV-BEl" customClass="PicAddressViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ECU-p0-3j0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-bB-HEl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="724"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EF-wV-ZNh">
+                                <rect key="frame" x="96.666666666666686" y="699" width="200" height="44"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="61e-lo-rSP"/>
+                                    <constraint firstAttribute="width" constant="200" id="goL-Sz-njd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                <state key="normal" title="اختيار العنوان">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Piclocation:" destination="2Lr-hV-BEl" eventType="touchUpInside" id="vhi-dB-O8t"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="custom-pin-red" translatesAutoresizingMaskIntoConstraints="NO" id="siP-zz-QLv">
+                                <rect key="frame" x="171.66666666666666" y="345.66666666666669" width="50" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="6ja-dn-yMm"/>
+                                    <constraint firstAttribute="width" constant="50" id="mkj-Me-5Ud"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tRV-BM-Ype"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tRV-BM-Ype" firstAttribute="trailing" secondItem="FVx-bB-HEl" secondAttribute="trailing" id="6Mg-TK-VKK"/>
+                            <constraint firstItem="siP-zz-QLv" firstAttribute="centerX" secondItem="ECU-p0-3j0" secondAttribute="centerX" id="HdE-kE-NOb"/>
+                            <constraint firstItem="tRV-BM-Ype" firstAttribute="bottom" secondItem="2EF-wV-ZNh" secondAttribute="bottom" constant="40" id="Uf9-uV-FQb"/>
+                            <constraint firstItem="siP-zz-QLv" firstAttribute="centerY" secondItem="FVx-bB-HEl" secondAttribute="centerY" constant="-38" id="hdE-fi-xQs"/>
+                            <constraint firstItem="2EF-wV-ZNh" firstAttribute="centerX" secondItem="ECU-p0-3j0" secondAttribute="centerX" id="uiA-PH-h9T"/>
+                            <constraint firstItem="FVx-bB-HEl" firstAttribute="leading" secondItem="ECU-p0-3j0" secondAttribute="leading" id="vr2-pu-QbT"/>
+                            <constraint firstAttribute="bottom" secondItem="FVx-bB-HEl" secondAttribute="bottom" id="x67-Pz-Rvl"/>
+                            <constraint firstItem="FVx-bB-HEl" firstAttribute="top" secondItem="tRV-BM-Ype" secondAttribute="top" id="yha-n5-BOj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="إختر العنوان" id="9Rs-JT-cBu"/>
+                    <connections>
+                        <outlet property="mapPlaceView" destination="FVx-bB-HEl" id="J5S-F5-L3O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCZ-6b-3Jh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="4"/>
+        </scene>
     </scenes>
     <designables>
+        <designable name="2EF-wV-ZNh">
+            <size key="intrinsicContentSize" width="73" height="38"/>
+        </designable>
         <designable name="BDt-uT-MFL">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="eQ2-xM-HPm">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>
         <image name="custom-pin" width="25" height="25"/>
+        <image name="custom-pin-red" width="40" height="40"/>
         <image name="no-image" width="980" height="980"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BGColor">
-            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.8666666666666667" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86699998378753662" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

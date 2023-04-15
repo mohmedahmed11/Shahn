@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		944F80C8061D703B50A6DB0A /* Pods_Shahn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244B180228A4E83B109F3D73 /* Pods_Shahn.framework */; };
 		CE81C0AF29E982BB0018CDCB /* ProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */; };
+		CE81C0B129EA52800018CDCB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */; };
+		CE81C0B329EA5AC50018CDCB /* PicAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */; };
 		CE9854AB29E55CF600644F0F /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854AA29E55CF600644F0F /* TabbarController.swift */; };
 		CE9854AD29E5619300644F0F /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AC29E5619300644F0F /* Tabbar.storyboard */; };
 		CE9854AF29E5621D00644F0F /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9854AE29E5621D00644F0F /* Orders.storyboard */; };
@@ -65,6 +67,8 @@
 		19992C77E07D9609007130D6 /* Pods-Shahn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shahn.release.xcconfig"; path = "Target Support Files/Pods-Shahn/Pods-Shahn.release.xcconfig"; sourceTree = "<group>"; };
 		244B180228A4E83B109F3D73 /* Pods_Shahn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shahn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTableViewCell.swift; sourceTree = "<group>"; };
+		CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicAddressViewController.swift; sourceTree = "<group>"; };
 		CE9854AA29E55CF600644F0F /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		CE9854AC29E5619300644F0F /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		CE9854AE29E5621D00644F0F /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
@@ -173,9 +177,9 @@
 		CE9854B629E56C9600644F0F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE9854BD29E5E0F900644F0F /* ReviewView */,
 				CE9854EE29E9533F00644F0F /* Cells */,
 				CE9854D629E69C1500644F0F /* Order */,
-				CE9854BD29E5E0F900644F0F /* ReviewView */,
 				CE9854B429E56C9100644F0F /* HomeViewController.swift */,
 				CE9854EC29E94CB200644F0F /* HomePresenter.swift */,
 				CE9854B729E56F2A00644F0F /* PrividersViewController.swift */,
@@ -196,6 +200,7 @@
 		CE9854D629E69C1500644F0F /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */,
 				CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */,
 			);
 			path = Order;
@@ -228,6 +233,7 @@
 				CE9854EF29E9535C00644F0F /* CategoryCollectionViewCell.swift */,
 				CE9854F129E95B3200644F0F /* CityCollectionViewCell.swift */,
 				CE81C0AE29E982BB0018CDCB /* ProviderTableViewCell.swift */,
+				CE81C0B029EA52800018CDCB /* ImageCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -485,9 +491,11 @@
 				CE9854F229E95B3200644F0F /* CityCollectionViewCell.swift in Sources */,
 				CE9854BC29E5E0F100644F0F /* ReviewView.swift in Sources */,
 				CEE041A929E3C89500239BF7 /* Extensions+UIView.swift in Sources */,
+				CE81C0B129EA52800018CDCB /* ImageCollectionViewCell.swift in Sources */,
 				CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */,
 				CEE041AD29E3C89500239BF7 /* Utilities.swift in Sources */,
 				CEE041AA29E3C89500239BF7 /* CommonFunctions.swift in Sources */,
+				CE81C0B329EA5AC50018CDCB /* PicAddressViewController.swift in Sources */,
 				CE9854B829E56F2A00644F0F /* PrividersViewController.swift in Sources */,
 				CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */,
 				CE9854EA29E932BF00644F0F /* RegistrationViewController.swift in Sources */,
