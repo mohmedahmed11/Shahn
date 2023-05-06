@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OrderPricingViewController: UIViewController {
+    
+    var providers: [JSON] = []
+    var providersFilltred: [JSON] = []
     
     @IBOutlet weak var optionsSegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -15,6 +19,7 @@ class OrderPricingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSegments()
+        providersFilltred = providers
         // Do any additional setup after loading the view.
     }
     
@@ -40,15 +45,22 @@ class OrderPricingViewController: UIViewController {
 
 extension OrderPricingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return providersFilltred.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProviderOfferTableViewCell
+        cell.setUI(with: providersFilltred[indexPath.row])
+        cell.changeStatus = {
+            
+        }
+        cell.providerDetails = {
+            self.performSegue(withIdentifier: "providerDetails", sender: nil)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "providerDetails", sender: nil)
+        
     }
 }

@@ -170,7 +170,7 @@
                                 <rect key="frame" x="8" y="153" width="377" height="657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="166" id="TNY-Qa-8Mo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="166" id="TNY-Qa-8Mo" customClass="ProviderOfferTableViewCell" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="377" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TNY-Qa-8Mo" id="Xub-Xt-mDc">
@@ -291,6 +291,9 @@
                                                                     <state key="normal" title="تفاصيل مقدم الخدمة">
                                                                         <color key="titleColor" systemColor="linkColor"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="showProviderDetails" destination="TNY-Qa-8Mo" eventType="touchUpInside" id="A9T-1t-Nee"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P5-8K-8P3">
                                                                     <rect key="frame" x="265" y="0.0" width="96" height="34"/>
@@ -299,6 +302,9 @@
                                                                     <state key="normal" title="تغيير حالة الطلب ">
                                                                         <color key="titleColor" systemColor="linkColor"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="changeStatusAction" destination="TNY-Qa-8Mo" eventType="touchUpInside" id="wDa-eN-4E3"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -315,6 +321,14 @@
                                                 <constraint firstAttribute="bottom" secondItem="QKZ-Yf-iav" secondAttribute="bottom" constant="8" id="r2b-UB-mRA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="circles" destination="fFF-ov-fGF" id="9RT-zv-CWF"/>
+                                            <outlet property="daies" destination="qYQ-L8-PnV" id="hNw-rV-XvJ"/>
+                                            <outlet property="date" destination="4yg-Gi-V94" id="Pka-A3-6zg"/>
+                                            <outlet property="name" destination="KxI-I8-MB7" id="1oU-qt-08D"/>
+                                            <outlet property="price" destination="J0e-i0-H3N" id="glx-7a-xe1"/>
+                                            <outlet property="status" destination="m7U-iw-FHA" id="wwg-JH-pDT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1008,7 +1022,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="377" height="50"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
-                                                            <segue destination="aRn-4d-VFq" kind="show" id="GtB-lo-SWp"/>
+                                                            <segue destination="aRn-4d-VFq" kind="show" identifier="pricing" id="GtB-lo-SWp"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

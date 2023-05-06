@@ -47,7 +47,7 @@ class OrderDetailsViewController: UIViewController {
         images = order["images"].arrayValue
         imagesCollectionView.reloadData()
         if order["status"].intValue != 0 && order["status"].intValue != 3 {
-            if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 3 }) {
+            if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 2 }) {
                 providerName.text = provider["name"].string
                 providerPhone.text = provider["contact"].string
                 providerOfferPrice.text = "\(provider["price"].stringValue) ريال"
@@ -59,15 +59,17 @@ class OrderDetailsViewController: UIViewController {
         }
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        if segue.identifier == "pricing" {
+            let vc = segue.destination as! OrderPricingViewController
+            vc.providers = order["providers"].arrayValue
+        }
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
 
