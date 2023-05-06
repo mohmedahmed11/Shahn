@@ -30,15 +30,19 @@ class OrdersViewController: UIViewController {
         self.presenter?.getOrders()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        if segue.identifier == "orderDetails" {
+            let vc = segue.destination as! OrderDetailsViewController
+            vc.order = sender as? JSON
+        }
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 
@@ -93,11 +97,11 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if orders[indexPath.row]["status"].intValue == 0 {
-            self.performSegue(withIdentifier: "orderPrices", sender: orders[indexPath.row])
-        }else {
+//        if orders[indexPath.row]["status"].intValue == 0 {
             self.performSegue(withIdentifier: "orderDetails", sender: orders[indexPath.row])
-        }
+//        }else {
+//            self.performSegue(withIdentifier: "orderDetails", sender: orders[indexPath.row])
+//        }
         
     }
 }

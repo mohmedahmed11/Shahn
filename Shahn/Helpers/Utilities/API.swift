@@ -711,7 +711,7 @@ extension Glubal: Endpoint {
         case .createOrder:
             return "write/orders.php"
         case .getOrders(let userID):
-            return "show/orders.php?user_id=\(userID)"
+            return "show/orders.php?user_id=\(userID)&action=all"
         }
     }
     
