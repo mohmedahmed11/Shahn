@@ -4,22 +4,202 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bahij Janna-Regular.ttf">
+            <string>BahijJanna</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--بيانات الحساب-->
         <scene sceneID="wJH-wM-IDt">
             <objects>
-                <viewController id="lF4-gR-CBw" sceneMemberID="viewController">
+                <viewController id="lF4-gR-CBw" customClass="UserAccountViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cM3-S8-YqP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fpV-wd-dv3">
+                                <rect key="frame" x="20" y="123" width="353" height="366"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="b6l-DJ-RXR">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXc-yd-7L5">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="ial-dy-76K"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الإسم " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aAb-CG-mM7">
+                                                <rect key="frame" x="0.0" y="22" width="353" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="gDR-sy-XKc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7tB-v1-qd7">
+                                        <rect key="frame" x="0.0" y="82" width="353" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الهاتف" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-my-6hx">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="ObG-4N-8TY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQU-w9-dYb">
+                                                <rect key="frame" x="0.0" y="22" width="353" height="40"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5XXXXXXXX" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O5h-GO-MXP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfJ-RN-Gan">
+                                                        <rect key="frame" x="8" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="1zI-ZQ-QDp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68z-E3-RLE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="14"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="O5h-GO-MXP" secondAttribute="trailing" id="5Mk-Ez-IVv"/>
+                                                    <constraint firstItem="68z-E3-RLE" firstAttribute="top" secondItem="NQU-w9-dYb" secondAttribute="top" id="5XR-5d-Jrl"/>
+                                                    <constraint firstItem="68z-E3-RLE" firstAttribute="leading" secondItem="NQU-w9-dYb" secondAttribute="leading" id="7X8-2M-s2e"/>
+                                                    <constraint firstAttribute="bottom" secondItem="AfJ-RN-Gan" secondAttribute="bottom" id="EKr-cT-Bc9"/>
+                                                    <constraint firstItem="O5h-GO-MXP" firstAttribute="leading" secondItem="NQU-w9-dYb" secondAttribute="leading" id="GU1-dA-ed9"/>
+                                                    <constraint firstItem="O5h-GO-MXP" firstAttribute="top" secondItem="NQU-w9-dYb" secondAttribute="top" id="M95-iK-5hg"/>
+                                                    <constraint firstItem="AfJ-RN-Gan" firstAttribute="left" secondItem="NQU-w9-dYb" secondAttribute="left" constant="8" id="QhE-VT-ywL"/>
+                                                    <constraint firstAttribute="height" constant="40" id="RRo-tN-3F2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="O5h-GO-MXP" secondAttribute="bottom" id="dbq-Wi-J2D"/>
+                                                    <constraint firstAttribute="trailing" secondItem="68z-E3-RLE" secondAttribute="trailing" id="gun-Ux-3Km"/>
+                                                    <constraint firstAttribute="bottom" secondItem="68z-E3-RLE" secondAttribute="bottom" id="jgh-ss-JNT"/>
+                                                    <constraint firstItem="AfJ-RN-Gan" firstAttribute="top" secondItem="NQU-w9-dYb" secondAttribute="top" id="yMU-vU-czD"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N5J-Fg-eUH">
+                                        <rect key="frame" x="0.0" y="164" width="353" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم التواصل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmX-Au-qMC">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="0ri-tf-Spl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qES-5q-FoT">
+                                                <rect key="frame" x="0.0" y="22" width="353" height="40"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5XXXXXXXX" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gx4-Dz-YTN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+966" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAD-al-al6">
+                                                        <rect key="frame" x="8" y="0.0" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="XTD-hL-SQb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Gx4-Dz-YTN" firstAttribute="leading" secondItem="qES-5q-FoT" secondAttribute="leading" id="3qu-PW-48t"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cAD-al-al6" secondAttribute="bottom" id="5fd-p7-SNw"/>
+                                                    <constraint firstItem="cAD-al-al6" firstAttribute="left" secondItem="qES-5q-FoT" secondAttribute="left" constant="8" id="6a6-Kd-TDC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gx4-Dz-YTN" secondAttribute="trailing" id="C1O-HT-k3v"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Gx4-Dz-YTN" secondAttribute="bottom" id="aKs-yV-mgy"/>
+                                                    <constraint firstAttribute="height" constant="40" id="mXF-V4-Pui"/>
+                                                    <constraint firstItem="cAD-al-al6" firstAttribute="top" secondItem="qES-5q-FoT" secondAttribute="top" id="nxz-X2-U70"/>
+                                                    <constraint firstItem="Gx4-Dz-YTN" firstAttribute="top" secondItem="qES-5q-FoT" secondAttribute="top" id="omG-yo-PQE"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9E-3B-z8q">
+                                        <rect key="frame" x="0.0" y="246" width="353" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-fe-PxJ" customClass="DesignableButton" customModule="Kaar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="316" width="353" height="50"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3ID-yS-eGf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                        <state key="normal" title="تعديل البيانات">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateAction" destination="lF4-gR-CBw" eventType="touchUpInside" id="o0h-Jw-oYI"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-FZ-0We" customClass="DesignableButton" customModule="Kaar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="366" width="353" height="40"/>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Wzy-Ox-3tW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                        <state key="normal" title="حذف الحساب">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteAccount" destination="lF4-gR-CBw" eventType="touchUpInside" id="fv2-oR-e8n"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IuE-0w-XWu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fpV-wd-dv3" firstAttribute="leading" secondItem="IuE-0w-XWu" secondAttribute="leading" constant="20" id="AtK-2A-tQs"/>
+                            <constraint firstAttribute="trailing" secondItem="fpV-wd-dv3" secondAttribute="trailing" constant="20" id="mWs-8i-zTa"/>
+                            <constraint firstItem="fpV-wd-dv3" firstAttribute="top" secondItem="IuE-0w-XWu" secondAttribute="top" constant="20" id="pIq-YQ-MHH"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KRI-7y-a3G"/>
+                    <navigationItem key="navigationItem" title="بيانات الحساب" id="KRI-7y-a3G"/>
+                    <connections>
+                        <outlet property="contact" destination="Gx4-Dz-YTN" id="wc2-Va-nBG"/>
+                        <outlet property="name" destination="aAb-CG-mM7" id="ROe-la-kaT"/>
+                        <outlet property="phone" destination="O5h-GO-MXP" id="ATH-mS-DdT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9S-al-2oP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,9 +225,20 @@
             <point key="canvasLocation" x="419" y="723"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="DOF-fe-PxJ">
+            <size key="intrinsicContentSize" width="79" height="38"/>
+        </designable>
+        <designable name="DPm-FZ-0We">
+            <size key="intrinsicContentSize" width="76" height="38"/>
+        </designable>
+    </designables>
     <resources>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.86699998378753662" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
