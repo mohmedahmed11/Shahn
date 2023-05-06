@@ -38,6 +38,7 @@
 		CE9854F229E95B3200644F0F /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9854F129E95B3200644F0F /* CityCollectionViewCell.swift */; };
 		CEAB76A02A066B7A00E963BC /* ProviderOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB769F2A066B7A00E963BC /* ProviderOfferTableViewCell.swift */; };
 		CEAB76A22A06EDFD00E963BC /* ChargesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB76A12A06EDFD00E963BC /* ChargesTableViewCell.swift */; };
+		CEAB76A42A06F7C000E963BC /* PayTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB76A32A06F7C000E963BC /* PayTypeViewController.swift */; };
 		CEE0417829E3510B00239BF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417729E3510B00239BF7 /* AppDelegate.swift */; };
 		CEE0417A29E3510B00239BF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417929E3510B00239BF7 /* SceneDelegate.swift */; };
 		CEE0417C29E3510B00239BF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0417B29E3510B00239BF7 /* ViewController.swift */; };
@@ -101,6 +102,7 @@
 		CE9854F129E95B3200644F0F /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEAB769F2A066B7A00E963BC /* ProviderOfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderOfferTableViewCell.swift; sourceTree = "<group>"; };
 		CEAB76A12A06EDFD00E963BC /* ChargesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargesTableViewCell.swift; sourceTree = "<group>"; };
+		CEAB76A32A06F7C000E963BC /* PayTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTypeViewController.swift; sourceTree = "<group>"; };
 		CEE0417429E3510B00239BF7 /* Shahn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shahn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0417729E3510B00239BF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0417929E3510B00239BF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				CE81C0B229EA5AC50018CDCB /* PicAddressViewController.swift */,
+				CEAB76A32A06F7C000E963BC /* PayTypeViewController.swift */,
 				CE9854D729E69C3400644F0F /* CreateOrderViewController.swift */,
 				CE81C0B429EA5E880018CDCB /* CreateOrderPresenter.swift */,
 			);
@@ -509,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9854DB29E823D000644F0F /* OrdersViewController.swift in Sources */,
+				CEAB76A42A06F7C000E963BC /* PayTypeViewController.swift in Sources */,
 				CEAB76A22A06EDFD00E963BC /* ChargesTableViewCell.swift in Sources */,
 				CEE041AF29E3C89500239BF7 /* AlertHelper.swift in Sources */,
 				CE9854D829E69C3400644F0F /* CreateOrderViewController.swift in Sources */,

@@ -32,6 +32,8 @@ class CreateOrderViewController: UIViewController {
     @IBOutlet weak var wightBtn: UIButton!
     @IBOutlet weak var circlesBtn: UIButton!
     
+    @IBOutlet weak var sendBtn: UIButton!
+    
     let datePicker: UIDatePicker = UIDatePicker()
     var selectedDateIs: String?
     
@@ -54,6 +56,8 @@ class CreateOrderViewController: UIViewController {
     
     var presenter: CreateOrderPresenter?
     var providers: [JSON]!
+    
+    var payType = 1
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -249,8 +253,9 @@ class CreateOrderViewController: UIViewController {
             AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
             return
         }
-        
-        sendData()
+        self.sendBtn.isEnabled = false
+        self.performSegue(withIdentifier: "payType", sender: nil)
+    
     }
     
     func sendData() {
@@ -269,6 +274,7 @@ class CreateOrderViewController: UIViewController {
         data.append(receiverName.text!.data(using: .utf8)!, withName: "receiver_name")
         data.append(phone.text!.data(using: .utf8)!, withName: "receiver_phone")
         data.append("create".data(using: .utf8)!, withName: "action")
+        data.append("\(payType)".data(using: .utf8)!, withName: "pay_type")
         
         do {
             let terms = try JSONEncoder().encode(providers)
@@ -294,10 +300,20 @@ class CreateOrderViewController: UIViewController {
         if segue.identifier == "picLocation" {
             let vc = segue.destination as! PicAddressViewController
             vc.delegate = self
+        }else if segue.identifier == "payType" {
+            let vc = segue.destination as! PayTypeViewController
+            vc.delegate = self
         }
         // Pass the selected object to the new view controller.
     }
 
+}
+
+extension CreateOrderViewController: PayTypeSelectionSelegate {
+    func didSelectPayType(type: Int) {
+        self.payType = type
+        self.sendData()
+    }
 }
 
 extension CreateOrderViewController: CreateOrderViewDelegate {
@@ -309,9 +325,11 @@ extension CreateOrderViewController: CreateOrderViewDelegate {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }else {
+                self.sendBtn.isEnabled = true
                 AlertHelper.showAlert(message: "عفوا لم يتم إنشاء الطلب يوجد خطأ")
             }
         case .failure(let error):
+            self.sendBtn.isEnabled = true
             AlertHelper.showAlert(message: "عفوا لم يتم إنشاء الطلب حدث خطأ")
             print(error)
         }

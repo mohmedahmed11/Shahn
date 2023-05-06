@@ -627,10 +627,12 @@
                         <outlet property="phone" destination="2Rp-iA-EPR" id="lc3-eL-6pr"/>
                         <outlet property="pickUp" destination="4i3-rM-LGe" id="MNC-XR-2oD"/>
                         <outlet property="receiverName" destination="Ndy-bv-zlt" id="8kB-LE-vb9"/>
+                        <outlet property="sendBtn" destination="cKR-Ws-ooJ" id="1zU-7w-FD9"/>
                         <outlet property="type" destination="dxo-s6-WF4" id="6EV-EZ-SCa"/>
                         <outlet property="wight" destination="mvw-bM-n4p" id="MTo-aa-ZJp"/>
                         <outlet property="wightBtn" destination="eQ2-xM-HPm" id="nFt-GD-4No"/>
                         <segue destination="2Lr-hV-BEl" kind="show" identifier="picLocation" id="dxn-8I-EeP"/>
+                        <segue destination="wrD-Bp-dzq" kind="presentation" identifier="payType" modalPresentationStyle="pageSheet" id="jyb-ZB-Nuf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -694,15 +696,190 @@
             </objects>
             <point key="canvasLocation" x="929" y="4"/>
         </scene>
+        <!--Pay Type View Controller-->
+        <scene sceneID="Ueq-q0-QRS">
+            <objects>
+                <viewController id="wrD-Bp-dzq" customClass="PayTypeViewController" customModule="Shahn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H6g-pA-kgK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhP-jt-mL2">
+                                <rect key="frame" x="0.0" y="495" width="393" height="288"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="C59-dx-d3b">
+                                        <rect key="frame" x="20" y="20" width="353" height="234"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إختر طريقة الدفع" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyN-lI-dUq">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="ifB-ri-nm9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="18"/>
+                                                <color key="textColor" name="PrimaryColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8aI-Oo-y3n">
+                                                <rect key="frame" x="0.0" y="54" width="353" height="110"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-YI-Asv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ht3-Ea-udp">
+                                                                <rect key="frame" x="8" y="0.0" width="337" height="50"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elW-NP-ic1" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
+                                                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="24" id="QaJ-ea-c2a"/>
+                                                                            <constraint firstAttribute="height" constant="24" id="fZK-EK-Ulu"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="12"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="2"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" name="PrimaryColor"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="payCashAction" destination="wrD-Bp-dzq" eventType="touchUpInside" id="IOf-a6-ngG"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع عند التوصيل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vG-iW-26E">
+                                                                        <rect key="frame" x="32" y="8" width="305" height="34"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="34" id="4dN-b7-MvP"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="BGColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="ht3-Ea-udp" secondAttribute="trailing" constant="8" id="AoB-qY-9el"/>
+                                                            <constraint firstItem="ht3-Ea-udp" firstAttribute="top" secondItem="pQN-YI-Asv" secondAttribute="top" id="GMB-M9-nnp"/>
+                                                            <constraint firstItem="ht3-Ea-udp" firstAttribute="leading" secondItem="pQN-YI-Asv" secondAttribute="leading" constant="8" id="Jxy-S7-SkL"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ht3-Ea-udp" secondAttribute="bottom" id="LNw-W5-1TV"/>
+                                                            <constraint firstAttribute="height" constant="50" id="pmE-tc-ehl"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfh-lQ-S8V">
+                                                        <rect key="frame" x="0.0" y="60" width="353" height="50"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xGu-NN-5wB">
+                                                                <rect key="frame" x="8" y="0.0" width="337" height="50"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyf-No-bI0" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="24" id="dua-Et-NNC"/>
+                                                                            <constraint firstAttribute="height" constant="24" id="jHm-RS-AJA"/>
+                                                                        </constraints>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="12"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="2"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" name="PrimaryColor"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="payBankAction" destination="wrD-Bp-dzq" eventType="touchUpInside" id="cCY-4y-7ua"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الدفع الإلكتروني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngb-gn-z2l">
+                                                                        <rect key="frame" x="32" y="8" width="305" height="34"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="34" id="Xm8-bF-r2m"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="BGColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="xGu-NN-5wB" firstAttribute="top" secondItem="Pfh-lQ-S8V" secondAttribute="top" id="Q0g-B4-AMO"/>
+                                                            <constraint firstItem="xGu-NN-5wB" firstAttribute="leading" secondItem="Pfh-lQ-S8V" secondAttribute="leading" constant="8" id="Zvg-qm-4BP"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xGu-NN-5wB" secondAttribute="bottom" id="cYa-bj-6jy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xGu-NN-5wB" secondAttribute="trailing" constant="8" id="liB-bs-Aba"/>
+                                                            <constraint firstAttribute="height" constant="50" id="wWZ-xY-xeQ"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-5f-Fmr">
+                                                <rect key="frame" x="0.0" y="184" width="353" height="50"/>
+                                                <color key="backgroundColor" name="PrimaryColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="BtQ-Tg-ohh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="16"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="تأكيد"/>
+                                                <connections>
+                                                    <action selector="confirmSelection" destination="wrD-Bp-dzq" eventType="touchUpInside" id="WR3-Lf-FNJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="C59-dx-d3b" firstAttribute="top" secondItem="RhP-jt-mL2" secondAttribute="top" constant="20" id="U4S-hK-gM1"/>
+                                    <constraint firstItem="C59-dx-d3b" firstAttribute="leading" secondItem="RhP-jt-mL2" secondAttribute="leading" constant="20" id="b3h-U7-Cca"/>
+                                    <constraint firstAttribute="bottom" secondItem="C59-dx-d3b" secondAttribute="bottom" constant="34" id="lPs-Tr-ypO"/>
+                                    <constraint firstAttribute="trailing" secondItem="C59-dx-d3b" secondAttribute="trailing" constant="20" id="n2v-EA-4EY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ToT-Jp-csR"/>
+                        <color key="backgroundColor" red="0.90588235859999999" green="0.90588235859999999" blue="0.9098039269" alpha="0.48176221029999999" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="RhP-jt-mL2" firstAttribute="trailing" secondItem="ToT-Jp-csR" secondAttribute="trailing" id="6i8-Uf-G87"/>
+                            <constraint firstItem="RhP-jt-mL2" firstAttribute="leading" secondItem="ToT-Jp-csR" secondAttribute="leading" id="LNL-T5-etP"/>
+                            <constraint firstItem="RhP-jt-mL2" firstAttribute="bottom" secondItem="ToT-Jp-csR" secondAttribute="bottom" id="gVO-gs-AgP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4KI-QV-VVi"/>
+                    <connections>
+                        <outlet property="payBankBtn" destination="Dyf-No-bI0" id="G2n-Qh-quz"/>
+                        <outlet property="payCashBtn" destination="elW-NP-ic1" id="ofM-uT-9S2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rhd-KN-Qgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="4"/>
+        </scene>
     </scenes>
     <designables>
-        <designable name="2EF-wV-ZNh">
-            <size key="intrinsicContentSize" width="73" height="38"/>
-        </designable>
         <designable name="BDt-uT-MFL">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
+        <designable name="Dyf-No-bI0">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="eQ2-xM-HPm">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="elW-NP-ic1">
             <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
