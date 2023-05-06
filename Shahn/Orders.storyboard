@@ -165,6 +165,9 @@
                                     <segment title="تم التنفيذ"/>
                                     <segment title="ملغي"/>
                                 </segments>
+                                <connections>
+                                    <action selector="optionChange:" destination="aRn-4d-VFq" eventType="valueChanged" id="cyw-0d-4D5"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2Vs-f0-VmH">
                                 <rect key="frame" x="8" y="153" width="377" height="657"/>

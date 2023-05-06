@@ -30,6 +30,16 @@ class OrderPricingViewController: UIViewController {
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: "BahijJanna", size: 16) ?? .systemFont(ofSize: 16)]
         optionsSegment.setTitleTextAttributes(fontAttributes, for: .normal)
     }
+    
+    @IBAction func optionChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.providersFilltred = providers
+        }else {
+            self.providersFilltred = providers.filter({ $0["status"].intValue == sender.selectedSegmentIndex - 1 })
+        }
+        
+        tableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
