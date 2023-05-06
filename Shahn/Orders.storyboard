@@ -1080,7 +1080,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
-                                            <segue destination="uK5-ZL-kni" kind="show" id="C3v-Gq-Msh"/>
+                                            <segue destination="uK5-ZL-kni" kind="show" identifier="charges" id="C3v-Gq-Msh"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1133,7 +1133,7 @@
                                 <rect key="frame" x="8" y="103" width="377" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="144" id="jn3-Mn-4pU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="144" id="jn3-Mn-4pU" customClass="ChargesTableViewCell" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="377" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jn3-Mn-4pU" id="r4u-6I-xjm">
@@ -1180,6 +1180,9 @@
                                                                     <state key="normal" title="الفاتورة">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="showInvoide" destination="jn3-Mn-4pU" eventType="touchUpInside" id="RAf-Ff-GKR"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -1263,6 +1266,13 @@
                                                 <constraint firstItem="5BZ-ij-lF4" firstAttribute="leading" secondItem="r4u-6I-xjm" secondAttribute="leading" constant="8" id="zmw-ls-E1B"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chargeId" destination="rWP-fO-Xlm" id="0FZ-0a-gHK"/>
+                                            <outlet property="date" destination="IBr-fU-jIT" id="QQD-Gy-h3W"/>
+                                            <outlet property="serial" destination="olv-bb-Rhc" id="xGL-sa-CX6"/>
+                                            <outlet property="status" destination="B3y-eq-C3d" id="XrL-B4-5wO"/>
+                                            <outlet property="wight" destination="feM-6N-cbJ" id="Vou-c6-gdb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

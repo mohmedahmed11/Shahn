@@ -668,6 +668,7 @@ extension Endpoint {
 enum Glubal {
     case baseurl
     case imageBaseurl
+    case filesBaseurl
     case about
     case users
     case getUser
@@ -689,12 +690,18 @@ extension Glubal: Endpoint {
         return "https://shahen1.com/shahen_app/images/"
     }
     
+    var baseFiles: String {
+        return "https://shahen1.com/shahen_app/files/"
+    }
+    
     var path: String {
         switch self {
         case .baseurl:
             return self.base
         case .imageBaseurl:
             return self.baseImages
+        case .filesBaseurl:
+            return self.baseFiles
         case .about:
             return "show/about.php"
         case .users:

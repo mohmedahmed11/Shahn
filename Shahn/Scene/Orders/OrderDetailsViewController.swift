@@ -67,6 +67,9 @@ class OrderDetailsViewController: UIViewController {
         if segue.identifier == "pricing" {
             let vc = segue.destination as! OrderPricingViewController
             vc.providers = order["providers"].arrayValue
+        }else if segue.identifier == "charges" {
+            let vc = segue.destination as! OrderLoadsViewController
+            vc.charges = order["charges"].arrayValue
         }
         // Pass the selected object to the new view controller.
     }
