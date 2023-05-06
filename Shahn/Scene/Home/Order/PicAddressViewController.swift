@@ -123,6 +123,7 @@ class PicAddressViewController: UIViewController ,MKMapViewDelegate {
     }
     
     @IBAction func Piclocation(_ sender: Any) {
+        guard let _ = selectedCordenate else { return }
         self.navigationController?.popViewController(animated: true)
         delegate?.picAdd(location: selectedCordenate)
         self.dismiss(animated: true) {
