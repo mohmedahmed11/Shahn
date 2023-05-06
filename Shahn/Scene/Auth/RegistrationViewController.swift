@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ProgressHUD
+import SafariServices
 
 class RegistrationViewController: UIViewController {
     
@@ -42,12 +43,12 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func opentAgreement() {
-        if let url = URL(string: "https://carrentksa.com/terms_conditions.pdf"), UIApplication.shared.canOpenURL(url) {
-           if #available(iOS 10.0, *) {
-              UIApplication.shared.open(url, options: [:], completionHandler: nil)
-           } else {
-              UIApplication.shared.openURL(url)
-           }
+        if let url = URL(string: "\(Glubal.termsURL.path)"), UIApplication.shared.canOpenURL(url) {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
         }
     }
     

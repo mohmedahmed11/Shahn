@@ -667,6 +667,7 @@ extension Endpoint {
 
 enum Glubal {
     case baseurl
+    case termsURL
     case imageBaseurl
     case filesBaseurl
     case about
@@ -679,11 +680,17 @@ enum Glubal {
     case createOrder
     case getOrders(userId: Int)
     case offersStatus
+    case inquiries
+    case createInquiry
 }
 
 extension Glubal: Endpoint {
     var base: String {
         return "https://shahen1.com/shahen_app/"
+    }
+    
+    var terms: String {
+        return "https://shahen1.com/terms_conditions.pdf"
     }
     
     var baseImages: String {
@@ -698,6 +705,8 @@ extension Glubal: Endpoint {
         switch self {
         case .baseurl:
             return self.base
+        case .termsURL:
+            return self.terms
         case .imageBaseurl:
             return self.baseImages
         case .filesBaseurl:
@@ -722,6 +731,10 @@ extension Glubal: Endpoint {
             return "show/orders.php?user_id=\(userID)&action=all"
         case .offersStatus:
             return "write/offers_status.php"
+        case .inquiries:
+            return "show/inquiries.php"
+        case .createInquiry:
+            return "write/inquiry.php"
         }
     }
     
