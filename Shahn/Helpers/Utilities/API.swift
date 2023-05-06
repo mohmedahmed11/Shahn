@@ -677,6 +677,7 @@ enum Glubal {
     case providers
     case createOrder
     case getOrders(userId: Int)
+    case offersStatus
 }
 
 extension Glubal: Endpoint {
@@ -712,6 +713,8 @@ extension Glubal: Endpoint {
             return "write/orders.php"
         case .getOrders(let userID):
             return "show/orders.php?user_id=\(userID)&action=all"
+        case .offersStatus:
+            return "write/offers_status.php"
         }
     }
     
