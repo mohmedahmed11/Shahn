@@ -736,6 +736,7 @@
 				DEVELOPMENT_TEAM = PP486X33A2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shahn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "شاحن";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -768,6 +769,7 @@
 				DEVELOPMENT_TEAM = PP486X33A2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shahn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "شاحن";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
