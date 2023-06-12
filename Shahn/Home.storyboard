@@ -504,19 +504,19 @@
                                                         <rect key="frame" x="8" y="0.0" width="377" height="329"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-br-zY8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="205"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="171.33333333333334"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna-Bold" family="Bahij Janna" pointSize="16"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8b-10-fKy">
-                                                                <rect key="frame" x="0.0" y="213" width="22.666666666666668" height="25.666666666666657"/>
+                                                                <rect key="frame" x="0.0" y="179.33333333333337" width="22.666666666666668" height="25.666666666666657"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="T4W-oL-b2G">
-                                                                <rect key="frame" x="0.0" y="246.66666666666663" width="106" height="18"/>
+                                                                <rect key="frame" x="0.0" y="213" width="106" height="18"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-fill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-Pt-xsC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
@@ -540,7 +540,13 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uX-tT-HuO">
-                                                                <rect key="frame" x="0.0" y="272.66666666666663" width="29.333333333333332" height="25.666666666666686"/>
+                                                                <rect key="frame" x="0.0" y="239" width="29.333333333333332" height="25.666666666666686"/>
+                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total providers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzp-WH-UgY">
+                                                                <rect key="frame" x="0.0" y="272.66666666666663" width="94.333333333333329" height="25.666666666666686"/>
                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -613,6 +619,7 @@
                         <outlet property="imageSlideShow" destination="fQV-Yh-2Cz" id="FyK-gB-EbT"/>
                         <outlet property="name" destination="ek6-br-zY8" id="02E-x9-oKX"/>
                         <outlet property="reveiwsStack" destination="2aM-Hc-Ue9" id="ems-DW-Hxf"/>
+                        <outlet property="totalProviders" destination="rzp-WH-UgY" id="BkK-9s-ZU9"/>
                         <outlet property="type" destination="3uX-tT-HuO" id="2HP-hf-iFp"/>
                         <outletCollection property="rateStars" destination="9Hl-Pt-xsC" collectionClass="NSMutableArray" id="0zN-yH-idu"/>
                         <outletCollection property="rateStars" destination="3tn-9P-qYj" collectionClass="NSMutableArray" id="cuH-RR-MRH"/>
