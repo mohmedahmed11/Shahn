@@ -11,6 +11,7 @@ import SwiftyJSON
 class OrderDetailsViewController: UIViewController {
     
     var order: JSON!
+    var provider: JSON!
     var images: [JSON] = []
     
     @IBOutlet weak var type: UILabel!
@@ -28,6 +29,7 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var providerOfferPrice: UILabel!
     @IBOutlet weak var providerOfferDaies: UILabel!
     @IBOutlet weak var chargesBtn: UIView!
+    @IBOutlet weak var loadsCount: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,17 +47,64 @@ class OrderDetailsViewController: UIViewController {
         reciverName.text = order["receiver_name"].string
         reciverPhone.text = order["receiver_phone"].string
         images = order["images"].arrayValue
+        
         imagesCollectionView.reloadData()
         if order["status"].intValue != 0 && order["status"].intValue != 3 {
             if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 2 }) {
+                self.provider = provider
                 providerName.text = provider["name"].string
                 providerPhone.text = provider["contact"].string
                 providerOfferPrice.text = "\(provider["price"].stringValue) ريال"
                 providerOfferDaies.text = "\(provider["duration"].stringValue) يوم"
+                if provider["total_delivery"].intValue > 0 {
+                    loadsCount.text = "\(provider["total_delivery"].intValue) شحنة"
+                }
             }
         }else {
             self.providerStack.isHidden = true
             self.chargesBtn.isHidden = true
+        }
+    }
+    
+    @IBAction func makeCall() {
+        let appURL = NSURL(string: "tel://0\(provider["contact"].stringValue)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+        let webURL = NSURL(string: "tel://0\(provider["contact"].stringValue)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+
+
+        if UIApplication.shared.canOpenURL(appURL as URL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(appURL as URL)
+            }
+        } else {
+            //redirect to safari because the user doesn't have Instagram
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(webURL as URL)
+            }
+        }
+    }
+    
+    @IBAction func openWhatsapp() {
+        
+        let appURL = NSURL(string: "https://api.whatsapp.com/send?text=&phone=966\(provider["contact"].stringValue)")!
+        let webURL = NSURL(string: "https://web.whatsapp.com/send?text=&phone=966\(provider["contact"].stringValue)")!
+
+        if UIApplication.shared.canOpenURL(appURL as URL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(appURL as URL)
+            }
+        } else {
+            //redirect to safari because the user doesn't have Instagram
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(webURL as URL)
+            }
         }
     }
 
