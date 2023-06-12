@@ -98,6 +98,42 @@ class ProvidersViewController: UIViewController {
         providersSegment.setTitleTextAttributes(fontAttributes, for: .normal)
     }
     
+    @IBAction func typesOptionChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.filtredProviders = providers
+        }else {
+            var str = "ثقيل"
+            if sender.selectedSegmentIndex == 1 {
+                str = "ثقيل"
+            }else if sender.selectedSegmentIndex == 2 {
+                str = "خفيف"
+            }
+            
+            self.filtredProviders = providers.filter({ $0["load_type"].stringValue == str})
+        }
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func accountTypeOptionChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.filtredProviders = providers
+        }else {
+            var str = "شركة"
+            if sender.selectedSegmentIndex == 1 {
+                str = "شركة"
+            }else if sender.selectedSegmentIndex == 2 {
+                str = "مؤسسة"
+            }else if sender.selectedSegmentIndex == 3 {
+                str = "فرد"
+            }
+            
+            self.filtredProviders = providers.filter({ $0["type"].stringValue == str})
+        }
+        
+        tableView.reloadData()
+    }
+    
 
     // MARK: - Navigation
 
