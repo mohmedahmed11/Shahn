@@ -66,6 +66,7 @@ class ProvidersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        citiesCollectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        self.navigationItem.title = selectedCategory["name"].string
         self.setupSearchView()
         self.setupSegments()
         self.resultCountLbl.isHidden = true
