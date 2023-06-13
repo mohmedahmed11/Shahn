@@ -14,7 +14,7 @@ PODS:
     - ImageSlideshow/Core
     - Kingfisher (> 3.0)
   - IQKeyboardManagerSwift (6.5.11)
-  - Kingfisher (7.5.0)
+  - Kingfisher (7.6.2)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
@@ -33,7 +33,7 @@ DEPENDENCIES:
   - ImageSlideshow
   - ImageSlideshow/Kingfisher
   - IQKeyboardManagerSwift
-  - Kingfisher
+  - Kingfisher (= 7.6.2)
   - NVActivityIndicatorView
   - ProgressHUD
   - SwiftyJSON
@@ -60,7 +60,7 @@ SPEC CHECKSUMS:
   GoogleMaps: a146f275ee429d14822178c7a841c03366ec92a1
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
-  Kingfisher: b9c2a4a4af2990a768445c277359b27bde287d71
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ProgressHUD: 355915c8f033e626788fa9b0d99d06e8691595ab
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
@@ -68,6 +68,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   YPImagePicker: f36043210c10b0783034eb1947d6e06e31c461e4
 
-PODFILE CHECKSUM: 8fef1769a76db3cc386d813959114c7d66ba8daa
+PODFILE CHECKSUM: 886141ee160973f9ba92588948ce8147d117895f
 
 COCOAPODS: 1.11.3
