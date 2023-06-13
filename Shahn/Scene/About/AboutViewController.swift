@@ -50,9 +50,6 @@ class AboutViewController: UIViewController {
     
     @IBAction func contractWhatsapp() {
         guard var phoneNumber = AppManager.shared.about?.whatsapp else { return }
-        if phoneNumber.first == "0" {
-            phoneNumber.removeFirst()
-        }
 
         let appURL = NSURL(string: "https://api.whatsapp.com/send?text=&phone=966\(phoneNumber)")!
         let webURL = NSURL(string: "https://web.whatsapp.com/send?text=&phone=966\(phoneNumber)")!

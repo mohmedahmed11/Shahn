@@ -64,7 +64,7 @@ class ValidationCodeViewController: UIViewController {
             return
         }
      
-        if self.userCode == sms.admin || self.userCode == "\(AppManager.shared.authUser!.userCode)" {
+        if self.userCode == "\(sms.admin)" || self.userCode == "\(AppManager.shared.authUser!.userCode)" {
             if AppManager.shared.authUser?.action == "register" {
                 sendData()
             } else if AppManager.shared.authUser?.action == "login" {

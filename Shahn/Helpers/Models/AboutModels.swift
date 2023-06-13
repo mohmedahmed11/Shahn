@@ -8,21 +8,21 @@
 import Foundation
 
 struct About: Codable {
-    let id: String
-    let whatsapp: String
+    let id: Int
+    let whatsapp: Int
     let instagram: String
     let snapchat: String
     let twitter: String
     let about: String
-    let phone: String
+    let phone: Int
 }
 
 struct SMS: Codable {
-    let id: String
+    let id: Int
     let sender: String
     let username: String
     let password: String
-    let admin: String
+    let admin: Int
 }
 
 
