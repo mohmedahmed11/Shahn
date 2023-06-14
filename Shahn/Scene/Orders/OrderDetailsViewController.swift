@@ -116,6 +116,7 @@ class OrderDetailsViewController: UIViewController {
         if segue.identifier == "pricing" {
             let vc = segue.destination as! OrderPricingViewController
             vc.providers = order["providers"].arrayValue
+            vc.orderStatus = order["status"].intValue
         }else if segue.identifier == "charges" {
             let vc = segue.destination as! OrderLoadsViewController
             vc.charges = order["charges"].arrayValue

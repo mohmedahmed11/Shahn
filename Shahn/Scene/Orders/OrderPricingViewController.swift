@@ -13,6 +13,7 @@ class OrderPricingViewController: UIViewController {
     var providers: [JSON] = []
     var providersFilltred: [JSON] = []
     var presenter: OrdersPresenter?
+    var orderStatus: Int = -1
     
     @IBOutlet weak var optionsSegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -76,9 +77,21 @@ extension OrderPricingViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProviderOfferTableViewCell
         cell.setUI(with: providersFilltred[indexPath.row])
+        if orderStatus != 0 {
+            cell.statusBtn.isHidden = true
+        }else {
+            cell.statusBtn.isHidden = false
+        }
         cell.changeStatus = {
-            AlertHelper.showActionSheet(message: "تغيير حالة الطلب", actions: ["معتمد", "تم التنفيذ", "ملغي"]) { index in
-                self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: (index ?? 0) + 1)
+            AlertHelper.showActionSheet(message: "تغيير حالة الطلب", actions: ["معتمد", "ملغي"]) { index in
+                
+                if index == 0 {
+                    AlertHelper.showActionSheet(message: "إختر طريقة الرفع", actions: ["الدفع عند الوصول", "دفع إلكتروني"]) { index in
+                        self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 1, paymentType: (index ?? 0) + 1)
+                    }
+                }else {
+                    self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 3, paymentType: 0)
+                }
             }
         }
         cell.providerDetails = {

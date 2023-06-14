@@ -17,8 +17,17 @@ class OrderLoadsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if charges.isEmpty {
+            addNoData()
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func addNoData() {
+        let error = noDataFoundNip()
+        error.frame.size.height = 200
+        error.content.text = "لاتوجد شحنات"
+        self.tableView.backgroundView = error
     }
     
 

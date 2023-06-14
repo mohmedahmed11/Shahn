@@ -26,10 +26,16 @@ class OrderTableViewCell: UITableViewCell {
         date.text = order["created_at"].string
         if order["status"].intValue == 0 {
             status.text = "جديد"
+            status.textColor = .systemBlue
         }else if order["status"].intValue == 1 {
             status.text = "قيد التنفيذ"
+            status.textColor = .systemOrange
         }else if order["status"].intValue == 2 {
             status.text = "مكتمل"
+            status.textColor = .systemGreen
+        }else {
+            status.text = "غير مكتمل"
+            status.textColor = .systemRed
         }
     }
 

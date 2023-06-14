@@ -331,6 +331,7 @@
                                             <outlet property="name" destination="KxI-I8-MB7" id="1oU-qt-08D"/>
                                             <outlet property="price" destination="J0e-i0-H3N" id="glx-7a-xe1"/>
                                             <outlet property="status" destination="m7U-iw-FHA" id="wwg-JH-pDT"/>
+                                            <outlet property="statusBtn" destination="6P5-8K-8P3" id="k2h-fn-87d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1185,7 +1186,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Ipq-ez-esC"/>
                         <barButtonItem key="rightBarButtonItem" style="done" id="zM4-3x-ehA">
                             <view key="customView" contentMode="scaleToFill" id="Qkl-oF-OOO">
-                                <rect key="frame" x="302" y="0.0" width="75" height="44"/>
+                                <rect key="frame" x="301" y="0.0" width="75" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشحنات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U10-Hb-Hog">
