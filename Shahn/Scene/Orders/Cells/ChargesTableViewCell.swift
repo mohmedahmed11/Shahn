@@ -29,7 +29,7 @@ class ChargesTableViewCell: UITableViewCell {
         self.chargeId.text = "#\(charge["id"].stringValue)"
         self.serial.text = "#\(charge["number"].stringValue)"
         self.date.text = charge["created_at"].string
-        self.wight.text = charge["wight"].string
+        self.wight.text = charge["wight"].stringValue+" طن"
         
         if charge["status"].intValue == 0 {
             status.text = "جديد"
