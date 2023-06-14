@@ -122,13 +122,22 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الوزن" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvw-bM-n4p">
-                                                                                <rect key="frame" x="69" y="11.333333333333341" width="98.666666666666686" height="27.333333333333329"/>
+                                                                                <rect key="frame" x="69" y="11.333333333333341" width="69" height="27.333333333333329"/>
                                                                                 <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
-                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                                                 <connections>
                                                                                     <action selector="valueChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="JHy-aY-spw"/>
                                                                                 </connections>
                                                                             </textField>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="طن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e37-yj-dgu">
+                                                                                <rect key="frame" x="146" y="8" width="21.666666666666657" height="34"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="34" id="Yni-fy-VP1"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" name="BahijJanna" family="Bahij Janna" pointSize="16"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>

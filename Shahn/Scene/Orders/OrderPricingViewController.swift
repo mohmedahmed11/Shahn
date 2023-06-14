@@ -87,10 +87,10 @@ extension OrderPricingViewController: UITableViewDelegate, UITableViewDataSource
                 
                 if index == 0 {
                     AlertHelper.showActionSheet(message: "إختر طريقة الرفع", actions: ["الدفع عند الوصول", "دفع إلكتروني"]) { index in
-                        self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 1, paymentType: (index ?? 0) + 1)
+                        self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 2, paymentType: (index ?? 0) + 1)
                     }
                 }else {
-                    self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 3, paymentType: 0)
+                    self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 4, paymentType: 0)
                 }
             }
         }

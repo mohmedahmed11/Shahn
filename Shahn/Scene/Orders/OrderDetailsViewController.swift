@@ -43,7 +43,7 @@ class OrderDetailsViewController: UIViewController {
     
     func setData() {
         type.text = order["type"].string
-        wight.text = !order["wight"].string!.isEmpty ? "الوزن: \(order["wight"].stringValue) طن" : "الردود: \(order["circles"].stringValue) ردود"
+        wight.text = order["wight"].intValue != 0 ? "الوزن: \(order["wight"].stringValue) طن" : "الردود: \(order["circles"].stringValue) ردود"
         details.text = order["details"].string
         chargeDate.text = "تاريخ الشحن: \(order["charge_date"].stringValue)"
         picLocation.text = "الشحن: \(order["pickup_lat"].stringValue) : \(order["pickup_lon"].stringValue)"
@@ -54,7 +54,7 @@ class OrderDetailsViewController: UIViewController {
         
         imagesCollectionView.reloadData()
         if order["status"].intValue != 0 && order["status"].intValue != 3 {
-            if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 1 || $0["status"].intValue == 2 }) {
+            if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 2 || $0["status"].intValue == 3 }) {
                 self.provider = provider
                 providerName.text = provider["name"].string
                 providerPhone.text = provider["contact"].string
