@@ -31,15 +31,19 @@ class OrderLoadsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "openLocation" {
+            let vc = segue.destination as! ShowAddressViewController
+            vc.locationJSON = sender as? JSON
+        }
     }
-    */
+    
 
 }
 
@@ -54,6 +58,9 @@ extension OrderLoadsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.chargeId.text = "#\(indexPath.row + 1)"
         cell.invoiceDetails = {
             self.openFile(with: self.charges[indexPath.row]["invoice"].stringValue)
+        }
+        cell.follawDriver = {
+            self.performSegue(withIdentifier: "openLocation", sender: JSON(["lat": self.charges[indexPath.row]["lat"].doubleValue ,"lon": self.charges[indexPath.row]["lon"].doubleValue]))
         }
         return cell
     }

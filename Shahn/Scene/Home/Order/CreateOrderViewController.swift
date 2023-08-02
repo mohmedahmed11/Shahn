@@ -25,6 +25,8 @@ class CreateOrderViewController: UIViewController {
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var pickUp: UILabel!
     @IBOutlet weak var dropOff: UILabel!
+    @IBOutlet weak var pickUpIn: UITextField!
+    @IBOutlet weak var dropOffIn: UITextField!
     @IBOutlet weak var chargeDate: UITextField!
     @IBOutlet weak var receiverName: UITextField!
     @IBOutlet weak var phone: UITextField!
@@ -229,7 +231,17 @@ class CreateOrderViewController: UIViewController {
             return
         }
         
+        if pickUpIn.text!.isEmpty {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
         if picUpLacation == nil {
+            AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
+            return
+        }
+        
+        if dropOffIn.text!.isEmpty {
             AlertHelper.showAlert(message: "عفواً جميع البيانات مطلوبة")
             return
         }
@@ -265,6 +277,8 @@ class CreateOrderViewController: UIViewController {
         data.append(wight.text!.data(using: .utf8)!, withName: "wight")
         data.append(circles.text!.data(using: .utf8)!, withName: "circles")
         data.append(details.text!.data(using: .utf8)!, withName: "details")
+        data.append(pickUpIn.text!.data(using: .utf8)!, withName: "pickup_area")
+        data.append(dropOffIn.text!.data(using: .utf8)!, withName: "drop_off_area")
         data.append("\(picUpLacation.latitude)".data(using: .utf8)!, withName: "pickup_lat")
         data.append("\(picUpLacation.longitude)".data(using: .utf8)!, withName: "pickup_lon")
         data.append("\(dropOffLacation.latitude)".data(using: .utf8)!, withName: "dropoff_lat")
@@ -320,6 +334,7 @@ extension CreateOrderViewController: CreateOrderViewDelegate {
     func didCreateOrder(with result: Result<JSON, Error>) {
         switch result {
         case .success(let data):
+            print(data)
             if data["operation"].boolValue == true {
                 AlertHelper.showOk(message: "تم إنشاء طلبك بنجاح") {
                     self.navigationController?.popToRootViewController(animated: true)

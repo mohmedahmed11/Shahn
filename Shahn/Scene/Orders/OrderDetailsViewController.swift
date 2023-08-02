@@ -19,6 +19,8 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var wight: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
+    @IBOutlet weak var picLocationAdd: UILabel!
+    @IBOutlet weak var dropLocationAdd: UILabel!
     @IBOutlet weak var picLocation: UILabel!
     @IBOutlet weak var dropLocation: UILabel!
     @IBOutlet weak var chargeDate: UILabel!
@@ -46,8 +48,11 @@ class OrderDetailsViewController: UIViewController {
         wight.text = order["wight"].intValue != 0 ? "الوزن: \(order["wight"].stringValue) طن" : "الردود: \(order["circles"].stringValue) ردود"
         details.text = order["details"].string
         chargeDate.text = "تاريخ الشحن: \(order["charge_date"].stringValue)"
-        picLocation.text = "الشحن: \(order["pickup_lat"].stringValue) : \(order["pickup_lon"].stringValue)"
-        dropLocation.text = "التفريغ: \(order["dropoff_lat"].stringValue) : \(order["dropoff_lon"].stringValue)"
+        picLocation.text = "\(order["pickup_lat"].stringValue) : \(order["pickup_lon"].stringValue)"
+        dropLocation.text = "\(order["dropoff_lat"].stringValue) : \(order["dropoff_lon"].stringValue)"
+        picLocationAdd.text = "الشحن: \(order["pickup_area"].stringValue)"
+        dropLocationAdd.text = "التفريغ: \(order["drop_off_area"].stringValue)"
+        
         reciverName.text = order["receiver_name"].string
         reciverPhone.text = order["receiver_phone"].string
         images = order["images"].arrayValue
@@ -60,8 +65,8 @@ class OrderDetailsViewController: UIViewController {
                 providerPhone.text = provider["contact"].string
                 providerOfferPrice.text = "\(provider["price"].stringValue) ريال"
                 providerOfferDaies.text = "\(provider["duration"].stringValue) يوم"
-                if provider["total_delivery"].intValue > 0 {
-                    loadsCount.text = "\(provider["total_delivery"].intValue) شحنة"
+                if order["total_delivery"].intValue > 0 {
+                    loadsCount.text = "\(order["total_delivery"].intValue) شحنة"
                 }
                 paymentType.text = provider["payment_type"].intValue == 1 ? "دفع عند الوصول" : "دفع ألكتروني"
                 reportBtn.isHidden = false
@@ -72,6 +77,15 @@ class OrderDetailsViewController: UIViewController {
             reportBtn.isHidden = true
         }
     }
+    
+    @IBAction func openPicInMap() {
+        self.performSegue(withIdentifier: "openLocation", sender: JSON(["lat": order["pickup_lat"].floatValue ,"lon": order["pickup_lon"].floatValue]))
+    }
+    
+    @IBAction func openDropInMap() {
+        self.performSegue(withIdentifier: "openLocation", sender: JSON(["lat": order["dropoff_lat"].floatValue ,"lon": order["dropoff_lon"].floatValue]))
+    }
+    
     
     @IBAction func makeCall() {
         let appURL = NSURL(string: "tel://0\(provider["contact"].stringValue)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
@@ -136,6 +150,9 @@ class OrderDetailsViewController: UIViewController {
         }else if segue.identifier == "charges" {
             let vc = segue.destination as! OrderLoadsViewController
             vc.charges = order["charges"].arrayValue
+        }else if segue.identifier == "openLocation" {
+            let vc = segue.destination as! ShowAddressViewController
+            vc.locationJSON = sender as? JSON
         }
         // Pass the selected object to the new view controller.
     }

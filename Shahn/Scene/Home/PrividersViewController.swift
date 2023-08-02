@@ -223,7 +223,7 @@ extension ProvidersViewController: UISearchBarDelegate, UISearchTextFieldDelegat
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         if searchBar.text!.count > 2 {
-            filtredProviders = providers.filter({ $0["city"].stringValue == searchBar.text || $0["name"].stringValue == searchBar.text || $0["load_type"].stringValue == searchBar.text || $0["type"].stringValue == searchBar.text })
+            filtredProviders = providers.filter({ $0["city"].stringValue == searchBar.text || $0["name"].stringValue.contains(searchBar.text!) || $0["load_type"].stringValue == searchBar.text || $0["type"].stringValue == searchBar.text })
         }else {
             filtredProviders = providers
         }
