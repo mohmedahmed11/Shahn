@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xby-Pc-WtX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xby-Pc-WtX">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="PqK-UT-g2O"/>
@@ -33,7 +33,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BgG-Uu-C30">
                                 <rect key="frame" x="20" y="260" width="353" height="110"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3b-mR-KXw" customClass="DesignableButton" customModule="Kaar" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3b-mR-KXw" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhB-Fg-zPU">
@@ -64,7 +64,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6O-4E-cjC" customClass="DesignableButton" customModule="Kaar" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6O-4E-cjC" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="353" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-nI-ycc">
@@ -219,6 +219,9 @@
                                                 <state key="normal" title="حذف الحساب">
                                                     <color key="titleColor" name="PrimaryColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="deleteAccount" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gms-xm-r7G"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -351,7 +354,7 @@
                                             <constraint firstAttribute="trailing" secondItem="3LH-oF-Q0p" secondAttribute="trailing" id="zmz-NK-vpq"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TG-wQ-RMc" customClass="DesignableButton" customModule="Kaar" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TG-wQ-RMc" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="132" width="353" height="128"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="iYp-pk-2bU">
@@ -383,7 +386,7 @@
                                             <constraint firstAttribute="height" constant="50" id="j4y-as-NLj"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K94-1S-bKM" customClass="DesignableButton" customModule="Kaar" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K94-1S-bKM" customClass="DesignableButton" customModule="Shahn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="342" width="353" height="50"/>
                                         <color key="backgroundColor" name="PrimaryColor"/>
                                         <constraints>
@@ -422,15 +425,24 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="2TG-wQ-RMc">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="K94-1S-bKM">
             <size key="intrinsicContentSize" width="34" height="38"/>
+        </designable>
+        <designable name="f3b-mR-KXw">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="h6O-4E-cjC">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>
         <image name="arrowtriangle.forward.fill" catalog="system" width="128" height="113"/>
         <image name="icon-extra" width="25" height="25"/>
         <image name="instgram" width="222" height="222"/>
-        <image name="logo" width="567" height="423"/>
+        <image name="logo" width="500" height="500"/>
         <image name="snap-150x150" width="150" height="150"/>
         <image name="twitter0" width="150" height="150"/>
         <image name="whatsup" width="147" height="143"/>

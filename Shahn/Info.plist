@@ -21,13 +21,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>NSCameraUsageDescription</key>
-	<string>التطبيق يتطلب الوصول للكاميرا لأخذ الصور المطلوبة لإنشاء طلبك</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>التطبيق يتطلب الوصول لمعرض الصور لإرفاق الصور المطلوبة لإنشاء طلبك</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>التطبيق يتطلب الوصول للموقع لكي تتمكن من تحديد مواقع الشحن والتفريغ</string>
 </dict>
 </plist>

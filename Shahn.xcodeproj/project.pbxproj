@@ -740,22 +740,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PP486X33A2;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = J8XP2443NZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shahn/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "شاحن";
+				INFOPLIST_KEY_NSCameraUsageDescription = "التطبيق يتطلب الوصول للكاميرا لأخذ الصور المطلوبة لإنشاء طلبك";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "التطبيق يتطلب الوصول للموقع لكي تتمكن من تحديد مواقع الشحن والتفريغ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "التطبيق يتطلب الوصول لمعرض الصور لإرفاق الصور المطلوبة لإنشاء طلبك";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = PitaStudio.Shahn;
+				MARKETING_VERSION = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shahen1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -773,22 +777,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = PP486X33A2;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = J8XP2443NZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shahn/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "شاحن";
+				INFOPLIST_KEY_NSCameraUsageDescription = "التطبيق يتطلب الوصول للكاميرا لأخذ الصور المطلوبة لإنشاء طلبك";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "التطبيق يتطلب الوصول للموقع لكي تتمكن من تحديد مواقع الشحن والتفريغ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "التطبيق يتطلب الوصول لمعرض الصور لإرفاق الصور المطلوبة لإنشاء طلبك";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = PitaStudio.Shahn;
+				MARKETING_VERSION = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shahen1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
