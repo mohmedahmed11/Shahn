@@ -13,27 +13,33 @@ class ProvidersViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var typesSegment: UISegmentedControl!
     @IBOutlet weak var providersSegment: UISegmentedControl!
-    @IBOutlet weak var citiesCollectionView: UICollectionView!
     
     @IBOutlet weak var resultCountLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var requestBTN: UIButton!
     
+    @IBOutlet weak var citiesBtn: UIButton!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var selectedCountLbl: UILabel!
+    
+    var pickerView = UIPickerView()
+    var currentTextField = UITextField()
+    
     var presenter: HomePesenter?
     
     var cities = [JSON]()
-    var providers = [JSON]() {
+    var filtredProviders = [JSON]() {
         didSet {
-            if !providers.isEmpty {
-                self.resultCountLbl.text = "عدد النتائج = \(providers.count)"
+            if !filtredProviders.isEmpty {
+                self.resultCountLbl.text = "عدد النتائج = \(filtredProviders.count)"
                 self.resultCountLbl.isHidden = false
             }else {
                 self.resultCountLbl.isHidden = true
             }
         }
-        
     }
+    var providers = [JSON]()
     var selectedCategory: JSON!
     
     var selectedCityIndex = 0
@@ -47,6 +53,7 @@ class ProvidersViewController: UIViewController {
                 self.requestBTN.isEnabled = false
                 self.requestBTN.backgroundColor = .systemGray3
             }
+            selectedCountLbl.text = "تم إختيار = \(selectedProviders.count)"
         }
         
     }
@@ -58,7 +65,8 @@ class ProvidersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        citiesCollectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
+//        citiesCollectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        self.navigationItem.title = selectedCategory["name"].string
         self.setupSearchView()
         self.setupSegments()
         self.resultCountLbl.isHidden = true
@@ -91,6 +99,42 @@ class ProvidersViewController: UIViewController {
         providersSegment.setTitleTextAttributes(fontAttributes, for: .normal)
     }
     
+    @IBAction func typesOptionChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.filtredProviders = providers
+        }else {
+            var str = "ثقيل"
+            if sender.selectedSegmentIndex == 1 {
+                str = "ثقيل"
+            }else if sender.selectedSegmentIndex == 2 {
+                str = "خفيف"
+            }
+            
+            self.filtredProviders = providers.filter({ $0["load_type"].stringValue == str})
+        }
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func accountTypeOptionChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.filtredProviders = providers
+        }else {
+            var str = "شركة"
+            if sender.selectedSegmentIndex == 1 {
+                str = "شركة"
+            }else if sender.selectedSegmentIndex == 2 {
+                str = "مؤسسة"
+            }else if sender.selectedSegmentIndex == 3 {
+                str = "فرد"
+            }
+            
+            self.filtredProviders = providers.filter({ $0["type"].stringValue == str})
+        }
+        
+        tableView.reloadData()
+    }
+    
 
     // MARK: - Navigation
 
@@ -116,13 +160,6 @@ extension ProvidersViewController: ProvidersViewDelegate {
         case .success(let data):
             if data["operation"].boolValue == true {
                 self.cities = data["data"].arrayValue
-                if !self.cities.isEmpty {
-                    self.citiesCollectionView.reloadData()
-                }else {
-                    self.citiesCollectionView.isHidden = true
-                }
-            }else {
-                self.citiesCollectionView.isHidden = true
             }
         case .failure(let error):
             self.faildLoading(icon: UIImage(named: "reload"), content: "حدث خطأ اعد المحاولة")
@@ -135,6 +172,7 @@ extension ProvidersViewController: ProvidersViewDelegate {
         case .success(let data):
             if data["operation"].boolValue == true {
                 self.providers = data["data"].arrayValue
+                self.filtredProviders = self.providers
                 if !self.providers.isEmpty {
                     self.tableView.backgroundView = nil
                     self.tableView.reloadData()
@@ -174,6 +212,8 @@ extension ProvidersViewController: UISearchBarDelegate, UISearchTextFieldDelegat
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.filtredProviders = providers
+        self.tableView.reloadData()
         showSearchbarCancelBtn(status: false)
     }
     
@@ -182,6 +222,12 @@ extension ProvidersViewController: UISearchBarDelegate, UISearchTextFieldDelegat
     }
 
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if searchBar.text!.count > 2 {
+            filtredProviders = providers.filter({ $0["city"].stringValue == searchBar.text || $0["name"].stringValue.contains(searchBar.text!) || $0["load_type"].stringValue == searchBar.text || $0["type"].stringValue == searchBar.text })
+        }else {
+            filtredProviders = providers
+        }
+        tableView.reloadData()
         showSearchbarCancelBtn(status: false)
     }
     
@@ -232,19 +278,19 @@ extension ProvidersViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedCityIndex = indexPath.item
-        self.citiesCollectionView.reloadData()
+//        self.citiesCollectionView.reloadData()
     }
 }
 
 
 extension ProvidersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.providers.count
+        return self.filtredProviders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProviderTableViewCell
-        let provider = self.providers[indexPath.row]
+        let provider = self.filtredProviders[indexPath.row]
         cell.setUI(with: provider)
         cell.checkedCallback = {
             if self.selectedProviders.first(where: {$0["id"].intValue == provider["id"].intValue}) != nil {
@@ -257,6 +303,70 @@ extension ProvidersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "providerDetails", sender: self.providers[indexPath.row])
+        self.performSegue(withIdentifier: "providerDetails", sender: self.filtredProviders[indexPath.row])
+    }
+}
+
+extension ProvidersViewController: UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBAction func picCity() {
+        self.city.becomeFirstResponder()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        currentTextField = textField
+        if currentTextField == city {
+            city.inputView = pickerView
+        }
+    }
+    
+    @IBAction func valueChanged(_ textField: UITextField) {
+        if textField.text!.count > 2 {
+            selectedProviders = providers.filter({ $0["city"].stringValue == textField.text || $0["name"].stringValue == textField.text || $0["load_type"].stringValue == textField.text || $0["type"].stringValue == textField.text })
+        }else {
+            filtredProviders = providers
+        }
+        tableView.reloadData()
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if currentTextField == city {
+            return self.cities.count + 1
+        }
+        return 0
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if currentTextField == city {
+            if row == 0 {
+                return "كل المناطق"
+            }else {
+                return self.cities[row - 1]["name"].string
+            }
+                
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if currentTextField == city {
+            if row == 0 {
+                filtredProviders = providers
+                self.citiesBtn.setTitle("كل المناطق", for: .normal)
+            }else {
+                print(self.cities[row - 1])
+                filtredProviders = providers.filter({ $0["city_id"].intValue == self.cities[row - 1]["id"].intValue })
+                self.citiesBtn.setTitle(self.cities[row - 1]["name"].string, for: .normal)
+            }
+            tableView.reloadData()
+        }
+        self.view.endEditing(true)
     }
 }

@@ -7,16 +7,20 @@
 
 import UIKit
 import SwiftyJSON
+import SafariServices
 
 class OrderDetailsViewController: UIViewController {
     
     var order: JSON!
+    var provider: JSON!
     var images: [JSON] = []
     
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var wight: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
+    @IBOutlet weak var picLocationAdd: UILabel!
+    @IBOutlet weak var dropLocationAdd: UILabel!
     @IBOutlet weak var picLocation: UILabel!
     @IBOutlet weak var dropLocation: UILabel!
     @IBOutlet weak var chargeDate: UILabel!
@@ -28,6 +32,10 @@ class OrderDetailsViewController: UIViewController {
     @IBOutlet weak var providerOfferPrice: UILabel!
     @IBOutlet weak var providerOfferDaies: UILabel!
     @IBOutlet weak var chargesBtn: UIView!
+   
+    @IBOutlet weak var loadsCount: UILabel!
+    @IBOutlet weak var paymentType: UILabel!
+    @IBOutlet weak var reportBtn: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,26 +45,97 @@ class OrderDetailsViewController: UIViewController {
     
     func setData() {
         type.text = order["type"].string
-        wight.text = !order["wight"].string!.isEmpty ? "الوزن: \(order["wight"].stringValue)" : "الردود: \(order["circles"].stringValue) ردود"
+        wight.text = order["wight"].intValue != 0 ? "الوزن: \(order["wight"].stringValue) طن" : "الردود: \(order["circles"].stringValue) ردود"
         details.text = order["details"].string
         chargeDate.text = "تاريخ الشحن: \(order["charge_date"].stringValue)"
-        picLocation.text = "الشحن: \(order["pickup_lat"].stringValue) : \(order["pickup_lon"].stringValue)"
-        dropLocation.text = "التفريغ: \(order["dropoff_lat"].stringValue) : \(order["dropoff_lon"].stringValue)"
+        picLocation.text = "\(order["pickup_lat"].stringValue) : \(order["pickup_lon"].stringValue)"
+        dropLocation.text = "\(order["dropoff_lat"].stringValue) : \(order["dropoff_lon"].stringValue)"
+        picLocationAdd.text = "الشحن: \(order["pickup_area"].stringValue)"
+        dropLocationAdd.text = "التفريغ: \(order["drop_off_area"].stringValue)"
+        
         reciverName.text = order["receiver_name"].string
         reciverPhone.text = order["receiver_phone"].string
         images = order["images"].arrayValue
+        
         imagesCollectionView.reloadData()
         if order["status"].intValue != 0 && order["status"].intValue != 3 {
-            if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 2 }) {
+            if let provider = order["providers"].arrayValue.first(where: { $0["status"].intValue == 2 || $0["status"].intValue == 3 }) {
+                self.provider = provider
                 providerName.text = provider["name"].string
                 providerPhone.text = provider["contact"].string
                 providerOfferPrice.text = "\(provider["price"].stringValue) ريال"
                 providerOfferDaies.text = "\(provider["duration"].stringValue) يوم"
+                if order["total_delivery"].intValue > 0 {
+                    loadsCount.text = "\(order["total_delivery"].intValue) شحنة"
+                }
+                paymentType.text = provider["payment_type"].intValue == 1 ? "دفع عند الوصول" : "دفع ألكتروني"
+                reportBtn.isHidden = false
             }
         }else {
             self.providerStack.isHidden = true
             self.chargesBtn.isHidden = true
+            reportBtn.isHidden = true
         }
+    }
+    
+    @IBAction func openPicInMap() {
+        self.performSegue(withIdentifier: "openLocation", sender: JSON(["lat": order["pickup_lat"].floatValue ,"lon": order["pickup_lon"].floatValue]))
+    }
+    
+    @IBAction func openDropInMap() {
+        self.performSegue(withIdentifier: "openLocation", sender: JSON(["lat": order["dropoff_lat"].floatValue ,"lon": order["dropoff_lon"].floatValue]))
+    }
+    
+    
+    @IBAction func makeCall() {
+        let appURL = NSURL(string: "tel://0\(provider["contact"].stringValue)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+        let webURL = NSURL(string: "tel://0\(provider["contact"].stringValue)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+
+
+        if UIApplication.shared.canOpenURL(appURL as URL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(appURL as URL)
+            }
+        } else {
+            //redirect to safari because the user doesn't have Instagram
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(webURL as URL)
+            }
+        }
+    }
+    
+    @IBAction func openWhatsapp() {
+        
+        let appURL = NSURL(string: "https://api.whatsapp.com/send?text=&phone=966\(provider["contact"].stringValue)")!
+        let webURL = NSURL(string: "https://web.whatsapp.com/send?text=&phone=966\(provider["contact"].stringValue)")!
+
+        if UIApplication.shared.canOpenURL(appURL as URL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(appURL as URL)
+            }
+        } else {
+            //redirect to safari because the user doesn't have Instagram
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(webURL as URL)
+            }
+        }
+    }
+    
+    @IBAction func oprnReport() {
+        let url = order["invoice"].stringValue
+        if let url = URL(string: "\(Glubal.filesBaseurl.path)\(url)"){
+            let vc = SFSafariViewController(url: url)
+            present(vc, animated: true)
+        }
+        
     }
 
     // MARK: - Navigation
@@ -67,9 +146,14 @@ class OrderDetailsViewController: UIViewController {
         if segue.identifier == "pricing" {
             let vc = segue.destination as! OrderPricingViewController
             vc.providers = order["providers"].arrayValue
+            vc.orderStatus = order["status"].intValue
+            vc.order = order
         }else if segue.identifier == "charges" {
             let vc = segue.destination as! OrderLoadsViewController
             vc.charges = order["charges"].arrayValue
+        }else if segue.identifier == "openLocation" {
+            let vc = segue.destination as! ShowAddressViewController
+            vc.locationJSON = sender as? JSON
         }
         // Pass the selected object to the new view controller.
     }

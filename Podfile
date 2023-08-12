@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
 target 'Shahn' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -12,7 +12,7 @@ target 'Shahn' do
   pod 'ProgressHUD'
   pod 'IQKeyboardManagerSwift'
   pod 'NVActivityIndicatorView'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '7.6.2'
   pod 'ImageSlideshow'
   pod "ImageSlideshow/Kingfisher"
   pod 'GoogleMaps'

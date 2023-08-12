@@ -18,6 +18,7 @@ class ProviderDetailsViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var totalProviders: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet var rateStars: [UIImageView]!
     @IBOutlet weak var reveiwsStack: UIStackView!
@@ -41,6 +42,7 @@ class ProviderDetailsViewController: UIViewController {
         name.text = provider["name"].string
         city.text = provider["city"].string
         details.text = provider["details"].string
+        totalProviders.text = "يوجد \(provider["total_drivers"].stringValue) مزود خدمة فرعي"
         type.text = provider["type"].stringValue+" - حمولة "+provider["load_type"].stringValue
         
         for star in rateStars {

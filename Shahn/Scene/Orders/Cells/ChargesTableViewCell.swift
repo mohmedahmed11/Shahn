@@ -17,8 +17,13 @@ class ChargesTableViewCell: UITableViewCell {
     @IBOutlet weak var wight: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var driver: UILabel!
+    @IBOutlet weak var follawDriverBtn: UIButton!
+    @IBOutlet weak var invoiceBtn: UIButton!
+    @IBOutlet weak var driverStack: UIStackView!
     
     var invoiceDetails: (() -> Void)?
+    var follawDriver: (() -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,19 +34,35 @@ class ChargesTableViewCell: UITableViewCell {
         self.chargeId.text = "#\(charge["id"].stringValue)"
         self.serial.text = "#\(charge["number"].stringValue)"
         self.date.text = charge["created_at"].string
-        self.wight.text = charge["wight"].string
+        self.wight.text = charge["wight"].stringValue+" طن"
+        self.driver.text = charge["driver_name"].string
         
         if charge["status"].intValue == 0 {
             status.text = "جديد"
+            status.textColor = .systemBlue
+            driverStack.isHidden = true
+            invoiceBtn.isHidden = true
         }else if charge["status"].intValue == 1 {
-            status.text = "تم التنفيذ"
+            status.text = "جاري الشحن"
+            status.textColor = .systemGreen
+            follawDriverBtn.isHidden = false
+            driverStack.isHidden = false
+            invoiceBtn.isHidden = false
         }else if charge["status"].intValue == 2 {
-            status.text = "ملغي"
+            status.text = "تم التنفيذ"
+            status.textColor = .systemRed
+            follawDriverBtn.isHidden = true
+            driverStack.isHidden = false
+            invoiceBtn.isHidden = false
         }
     }
     
     @IBAction func showInvoide() {
         invoiceDetails?()
+    }
+    
+    @IBAction func follawDriverAction() {
+        follawDriver?()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

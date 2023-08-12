@@ -7,12 +7,18 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
+import ProgressHUD
 
 class OrderPricingViewController: UIViewController {
     
     var providers: [JSON] = []
     var providersFilltred: [JSON] = []
     var presenter: OrdersPresenter?
+    var orderStatus: Int = -1
+    var offerStatus: Int = -1
+    var order: JSON!
+    var providerContact: String = ""
     
     @IBOutlet weak var optionsSegment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -64,7 +70,25 @@ class OrderPricingViewController: UIViewController {
 
 extension OrderPricingViewController: PricingOffersStatusDelegate {
     func didStatusChanged(with result: Result<JSON, Error>) {
-        self.navigationController?.popToRootViewController(animated: true)
+        if offerStatus == 2 {
+            self.sendSMS()
+        } else {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    func sendSMS() {
+        let message = "تطبيق شاحن \n تم إعتماد عرض التسعير للطلب #\(order["id"].stringValue) - \(order["type"].stringValue)"
+        let parameters:Parameters = ["message": message.utf8,"phone": "966\(providerContact)"]
+        print(parameters)
+        
+        ProgressHUD.animationType = .circleStrokeSpin
+        ProgressHUD.show()
+        NetworkManager.instance.request(with: "\(Glubal.baseurl.path)\(Glubal.sms.path)", method: .post, parameters: parameters,  decodingType: JSON.self, errorModel: ErrorModel.self) { result in
+            ProgressHUD.dismiss()
+            self.offerStatus = -1
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 }
 
@@ -76,9 +100,23 @@ extension OrderPricingViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProviderOfferTableViewCell
         cell.setUI(with: providersFilltred[indexPath.row])
+        if orderStatus != 0 {
+            cell.statusBtn.isHidden = true
+        }else {
+            cell.statusBtn.isHidden = false
+        }
         cell.changeStatus = {
-            AlertHelper.showActionSheet(message: "تغيير حالة الطلب", actions: ["معتمد", "تم التنفيذ", "ملغي"]) { index in
-                self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: (index ?? 0) + 1)
+            AlertHelper.showActionSheet(message: "تغيير حالة الطلب", actions: ["معتمد", "ملغي"]) { index in
+                
+                if index == 0 {
+                    AlertHelper.showActionSheet(message: "إختر طريقة الرفع", actions: ["الدفع عند الوصول", "دفع إلكتروني"]) { index in
+                        self.offerStatus = 2
+                        self.providerContact = self.providersFilltred[indexPath.row]["contact"].stringValue
+                        self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 2, paymentType: (index ?? 0) + 1)
+                    }
+                }else {
+                    self.presenter?.changeOfferStatus(offerId: self.providersFilltred[indexPath.row]["id"].intValue, orderId: self.providersFilltred[indexPath.row]["order_id"].intValue, status: 4, paymentType: 0)
+                }
             }
         }
         cell.providerDetails = {

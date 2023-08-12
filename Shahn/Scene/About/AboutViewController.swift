@@ -8,6 +8,7 @@
 import UIKit
 import SwiftyJSON
 import SafariServices
+import ProgressHUD
 
 class AboutViewController: UIViewController {
     
@@ -50,9 +51,6 @@ class AboutViewController: UIViewController {
     
     @IBAction func contractWhatsapp() {
         guard var phoneNumber = AppManager.shared.about?.whatsapp else { return }
-        if phoneNumber.first == "0" {
-            phoneNumber.removeFirst()
-        }
 
         let appURL = NSURL(string: "https://api.whatsapp.com/send?text=&phone=966\(phoneNumber)")!
         let webURL = NSURL(string: "https://web.whatsapp.com/send?text=&phone=966\(phoneNumber)")!
@@ -139,6 +137,41 @@ class AboutViewController: UIViewController {
         }
     }
 
+    @IBAction func deleteAccount() {
+        AlertHelper.showOkCancel(message: "هل ترغب في حذف الحساب") {
+            self.sendDeleteAccount()
+        }
+    }
+    
+    func sendDeleteAccount() {
+        ProgressHUD.animationType = .circleStrokeSpin
+        ProgressHUD.show()
+        NetworkManager.instance.request(with: "\(Glubal.baseurl.path)\(Glubal.users.path)", method: .post, parameters: ["id": AppManager.shared.authUser!.id, "action": "delete"], decodingType: JSON.self, errorModel: ErrorModel.self) { result in
+            ProgressHUD.dismiss()
+            switch result {
+            case .success(let data):
+                if data["operation"].boolValue == true {
+                    AlertHelper.showOk(message: "تم حذف الحساب") {
+                        self.logoutAfterDelete()
+                    }
+                }else {
+                    AlertHelper.showAlert(message:  "عفواً فشل الحذف حاول مرة أخرى")
+                }
+                
+            case .failure(let error):
+                AlertHelper.showAlert(message: "عفواً فشل الحذف حاول مرة أخرى")
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func logoutAfterDelete() {
+        UserDefaults.standard.removeObject(forKey: "userIsIn")
+        UserDefaults.standard.removeObject(forKey: "user_phone")
+        self.parent?.parent?.navigationController?.popToRootViewController(animated: true)
+    
+    }
+    
     /*
     // MARK: - Navigation
 

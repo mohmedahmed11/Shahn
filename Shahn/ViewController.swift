@@ -89,10 +89,11 @@ class ViewController: UIViewController {
             ProgressHUD.dismiss()
             switch result {
             case .success(let data):
+                print(data)
                 AppManager.shared.about = data.about
                 AppManager.shared.sms = data.sms
                 self.segue()
-                print(data.about.about)
+//                print(data.about.about)
             case .failure(let error):
                 self.faildLoading()
                 print(error.localizedDescription)

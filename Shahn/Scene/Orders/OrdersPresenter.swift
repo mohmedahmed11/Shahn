@@ -47,8 +47,8 @@ class OrdersPresenter {
         }
     }
     
-    func changeOfferStatus(offerId: Int, orderId: Int, status: Int) {
-        guard let request = Glubal.offersStatus.getRequest(parameters: ["offer_id": "\(offerId)", "order_id": "\(orderId)", "status": "\(status)"]) else {return}
+    func changeOfferStatus(offerId: Int, orderId: Int, status: Int, paymentType: Int) {
+        guard let request = Glubal.offersStatus.getRequest(parameters: ["offer_id": "\(offerId)", "order_id": "\(orderId)", "status": "\(status)", "payment_type": "\(paymentType)"]) else {return}
         startProgress()
         NetworkManager.instance.request(with: request, decodingType: JSON.self, errorModel: ErrorModel.self) { [weak self] result in
             guard let self = self else { return }

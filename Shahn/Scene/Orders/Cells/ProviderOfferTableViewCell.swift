@@ -19,6 +19,8 @@ class ProviderOfferTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var status: UILabel!
     
+    @IBOutlet weak var statusBtn: UIButton!
+    
     var changeStatus: (() -> Void)?
     var providerDetails: (() -> Void)?
     
@@ -36,14 +38,18 @@ class ProviderOfferTableViewCell: UITableViewCell {
         
         print(provider)
         
-        if provider["status"].intValue == 0 {
+        if provider["status"].intValue == 0 || provider["status"].intValue == 1 {
             status.text = "جديد"
-        }else if provider["status"].intValue == 1 {
-            status.text = "معتمد"
+            status.textColor = .systemBlue
         }else if provider["status"].intValue == 2 {
-            status.text = "تم التنفيذ"
+            status.text = "معتمد"
+            status.textColor = .systemOrange
         }else if provider["status"].intValue == 3 {
+            status.text = "تم التنفيذ"
+            status.textColor = .systemGreen
+        }else {
             status.text = "ملغي"
+            status.textColor = .systemRed
         }
     }
 
