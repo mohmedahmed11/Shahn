@@ -104,6 +104,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentCategoryIndex = indexPath.item
+        selectedCategory = categories[currentCategoryIndex]
+        self.performSegue(withIdentifier: "providers", sender: self)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: collectionView.frame.width, height: collectionView.frame.height)
     }

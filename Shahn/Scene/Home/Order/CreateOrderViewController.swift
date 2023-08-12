@@ -10,6 +10,7 @@ import YPImagePicker
 import Alamofire
 import SwiftyJSON
 import CoreLocation
+import ProgressHUD
 
 class CreateOrderViewController: UIViewController {
     
@@ -337,7 +338,7 @@ extension CreateOrderViewController: CreateOrderViewDelegate {
             print(data)
             if data["operation"].boolValue == true {
                 AlertHelper.showOk(message: "تم إنشاء طلبك بنجاح") {
-                    self.navigationController?.popToRootViewController(animated: true)
+                    self.sendSMS()
                 }
             }else {
                 self.sendBtn.isEnabled = true
@@ -347,6 +348,19 @@ extension CreateOrderViewController: CreateOrderViewDelegate {
             self.sendBtn.isEnabled = true
             AlertHelper.showAlert(message: "عفوا لم يتم إنشاء الطلب حدث خطأ")
             print(error)
+        }
+    }
+    
+    func sendSMS() {
+        let message = "تطبيق شاحن - طلب تسعير \n \(type.text!) \n من \(pickUpIn.text!) إلى \(dropOffIn.text!)"
+        let parameters:Parameters = ["message": message.utf8,"phones_array": providers.map({ "966"+$0["contact"].stringValue})]
+        print(parameters)
+        
+        ProgressHUD.animationType = .circleStrokeSpin
+        ProgressHUD.show()
+        NetworkManager.instance.request(with: "\(Glubal.baseurl.path)\(Glubal.sms.path)", method: .post, parameters: parameters,  decodingType: JSON.self, errorModel: ErrorModel.self) { result in
+            ProgressHUD.dismiss()
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }
